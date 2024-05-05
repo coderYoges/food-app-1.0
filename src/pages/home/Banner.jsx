@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import background from "../../assets/images/bg-hero.jpg";
+import ServicesCmpt from "./Services";
 
 const bannerImage = require("../../assets/images/banner.jpeg");
 
@@ -11,14 +12,13 @@ const BannerContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100vh;
   background-color: #0f172b;
   padding: 3rem 0.75rem;
 `;
 
 const BannerWrapper = styled.div`
-  padding: 3rem 3rem;
-  margin: 3rem 0;
+  padding: 3rem 3rem 0 3rem;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -30,6 +30,7 @@ const BannerTitle = styled.h1`
   line-height: 1.5;
   font-size: calc(1rem + 1vw);
   font-family: "Briem Hand", cursive;
+  cursor: pointer;
   &:hover {
     text-decoration: underline;
     text-decoration-color: #fea116;
@@ -40,6 +41,7 @@ const BannerTitle = styled.h1`
 const BannerImage = styled.img`
   border-radius: 2rem;
   border: 1px solid #fff;
+  cursor: pointer;
   &:hover {
     border: 2px solid #fea116;
   }
@@ -56,6 +58,7 @@ const EnquiryLink = styled.a`
   font-size: 1rem;
   transition: 0.5s;
   display: inline-block;
+  cursor: pointer;
   &:hover {
     background-color: green;
   }
@@ -78,7 +81,7 @@ const BannerCmpt = () => {
               lorem sit clita duo justo magna dolore erat amet
             </p>
 
-            <EnquiryLink href="#">Read more</EnquiryLink>
+            <EnquiryLink href="#" className="animated slideInLeft">Read more</EnquiryLink>
           </div>
           <div className="col-lg-6 text-center text-lg-end overflow-hidden">
             <BannerImage
@@ -88,6 +91,7 @@ const BannerCmpt = () => {
             />
           </div>
         </div>
+        <ServicesCmpt />
       </BannerWrapper>
     </BannerContainer>
   );
