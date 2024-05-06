@@ -57,13 +57,8 @@ const NavbarLink = styled.span`
   font-weight: 600;
   outline: none;
   transition: 0.5s;
-  color: #fff;
+  color: ${({active})=> active ? '#fea116' : '#fff'};
   user-selection: none;
-  &:link,
-  &:visited,
-  &:active {
-    color: #fff;
-  }
   &:hover {
     color: #fea116;
   }
@@ -108,6 +103,7 @@ const NavbarCmpt = () => {
               onClick={() =>
                 navigate(`/${item.toLowerCase()}`, { replace: true })
               }
+              active={window.location.pathname.includes(item.toLowerCase())}
             >
               {item}
             </NavbarLink>
