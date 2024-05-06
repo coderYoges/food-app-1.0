@@ -30,7 +30,7 @@ const SectionLink = styled.a`
   }
 `;
 
-const SectionContent = styled.p`
+const SectionContent = styled.div`
   display: block;
   margin-bottom: 1rem;
   padding: 0;
@@ -141,8 +141,8 @@ const FooterCmpt = () => {
             <span className="d-inline-block pt-1">+91 7845682228 </span>
           </SectionContent>
           <SectionContent>
-            <i className="fa fa-envelope me-3"></i>
-            h.a.briyani@gmail.com
+            <i className="fa fa-envelope me-3 d-lg-none"></i>
+            h.a.briyani1974@gmail.com
           </SectionContent>
           <div className="d-flex">
             <SocialLink href="#">

@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { navPaths } from "../../config";
 
 const NavbarContainer = styled.nav`
   @media (min-width: 992px) {
     padding: 1rem 3rem;
   }
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: transparent !important;
+  background-color: rgb(15,23,43) !important;
 `;
 
-const NavbarBrand = styled.a`
+const NavbarBrand = styled.span`
   margin-right: 1rem;
   font-size: 1.2rem;
   white-space: nowrap;
@@ -45,7 +47,8 @@ const NavbarCollapse = styled.button`
   }
 `;
 
-const NavbarLink = styled.a`
+const NavbarLink = styled.span`
+  cursor: pointer;  
   position: relative;
   margin-left: 1.5rem;
   padding: 1rem 0;
@@ -55,6 +58,12 @@ const NavbarLink = styled.a`
   outline: none;
   transition: 0.5s;
   color: #fff;
+  user-selection: none;
+  &:link,
+  &:visited,
+  &:active {
+    color: #fff;
+  }
   &:hover {
     color: #fea116;
   }
@@ -77,9 +86,10 @@ const EnquiryLink = styled.a`
 `;
 
 const NavbarCmpt = () => {
+  const navigate = useNavigate();
   return (
     <NavbarContainer className="navbar navbar-expand-lg bg-dark px-4 px-lg-5 py-3">
-      <NavbarBrand href="#" className="p-0">
+      <NavbarBrand className="p-0">
         <NavbarBanner>H.A.Briyani</NavbarBanner>
       </NavbarBrand>
       <NavbarCollapse
@@ -91,23 +101,19 @@ const NavbarCmpt = () => {
       </NavbarCollapse>
       <div className="collapse navbar-collapse">
         <div className="navbar-nav ms-auto py-0 pe-4">
-          <NavbarLink href="#" className="nav-link">
-            Home
-          </NavbarLink>
-          <NavbarLink href="#" className="nav-link">
-            About
-          </NavbarLink>
-          <NavbarLink href="#" className="nav-link">
-            Menu
-          </NavbarLink>
-          <NavbarLink href="#" className="nav-link">
-            Gallery
-          </NavbarLink>
-          <NavbarLink href="#" className="nav-link">
-            Contact
-          </NavbarLink>
+          {navPaths.map((item, index) => (
+            <NavbarLink
+              key={item + index}
+              className="nav-link"
+              onClick={() =>
+                navigate(`/${item.toLowerCase()}`, { replace: true })
+              }
+            >
+              {item}
+            </NavbarLink>
+          ))}
         </div>
-        <EnquiryLink href="#">Enquiry</EnquiryLink>
+        <EnquiryLink>Enquiry</EnquiryLink>
       </div>
     </NavbarContainer>
   );
