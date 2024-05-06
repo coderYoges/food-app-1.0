@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import background from "../../assets/images/bg-hero.jpg";
-import ServicesCmpt from "./Services";
 
 const bannerImage = require("../../assets/images/banner.jpeg");
 
@@ -91,7 +90,6 @@ const BannerCmpt = () => {
             />
           </div>
         </div>
-        <ServicesCmpt />
       </BannerWrapper>
     </BannerContainer>
   );

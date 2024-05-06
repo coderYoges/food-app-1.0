@@ -18,7 +18,7 @@ const ServiceIcon = styled.i`
 
 const ServicesCmpt = () => {
   return (
-    <div className="py-5">
+    <div className="pt-5 px-4 px-lg-5">
       <div className="row g-4">
         {/* Catering services */}
         <div className="col-lg-3 col-sm-6 animated fadeInUp">
@@ -74,7 +74,7 @@ const ServicesCmpt = () => {
                   alignItems: "center",
                 }}
               >
-                Commercial Cooking Spaces
+                Own Commercial Spaces
               </h5>
               <p className="text-secondary">
                 Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita

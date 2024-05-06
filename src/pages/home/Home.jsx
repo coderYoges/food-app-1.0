@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import NavbarCmpt from "../../components/navbar/Navbar";
 import BannerCmpt from "./Banner";
+import ServicesCmpt from './Services';
+import FooterCmpt from "../../components/footer/Footer";
 
 const HomePageContainer = styled.div`
   width: 100vw;
@@ -26,6 +28,8 @@ const HomePage = () => {
       <BannerContainer>
         <NavbarCmpt />
         <BannerCmpt />
+        <ServicesCmpt />
+        <FooterCmpt />
       </BannerContainer>
     </HomePageContainer>
   );
