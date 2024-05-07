@@ -1656,3 +1656,31 @@ body {
 .years-counter::after {
   content: counter(num);
 }
+
+@keyframes roll-height {
+  from {
+    max-height: 0px;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
+
+.roll-height {
+  animation: roll-height 1.5s;
+}
+
+@keyframes roll-margin {
+  from {
+    margin-top: 0px;
+  }
+  to {
+    margin-top: 300px;
+  }
+}
+
+.roll-margin {
+  animation: roll-margin 1.5s;
+}

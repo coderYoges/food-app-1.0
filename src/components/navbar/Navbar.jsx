@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { navPaths } from "../../config";
+import { connect } from "react-redux";
+import { setNavbar } from "../../redux/reducer";
 
 const NavbarContainer = styled.nav`
   @media (min-width: 992px) {
@@ -12,7 +14,7 @@ const NavbarContainer = styled.nav`
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: rgb(15,23,43) !important;
+  background-color: rgb(15, 23, 43) !important;
 `;
 
 const NavbarBrand = styled.span`
@@ -47,8 +49,16 @@ const NavbarCollapse = styled.button`
   }
 `;
 
+const NavbarCollapseSmall = styled.div`
+  margin-top: 15px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+`;
+
 const NavbarLink = styled.span`
-  cursor: pointer;  
+  cursor: pointer;
   position: relative;
   margin-left: 1.5rem;
   padding: 1rem 0;
@@ -57,7 +67,7 @@ const NavbarLink = styled.span`
   font-weight: 600;
   outline: none;
   transition: 0.5s;
-  color: ${({active})=> active ? '#fea116' : '#fff'};
+  color: ${({ active }) => (active ? "#fea116" : "#fff")};
   user-selection: none;
   &:hover {
     color: #fea116;
@@ -80,7 +90,11 @@ const EnquiryLink = styled.a`
   }
 `;
 
-const NavbarCmpt = () => {
+const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
+  const [isNavOpened, setNavOpened] = useState(false);
+  useEffect(() => {
+    setNavbar(isNavOpened);
+  }, [isNavOpened]);
   const navigate = useNavigate();
   return (
     <NavbarContainer className="navbar navbar-expand-lg bg-dark px-4 px-lg-5 py-3">
@@ -91,9 +105,26 @@ const NavbarCmpt = () => {
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarCollapse"
+        onClick={()=> setNavOpened(!isNavOpened)}
       >
         <span className="fa fa-bars"></span>
       </NavbarCollapse>
+      <NavbarCollapseSmall className={`roll-height ${navbarOpened ? "d-block" : "d-none"}`}>
+        <div className="navbar-nav ms-auto py-0 pe-4">
+          {navPaths.map((item, index) => (
+            <NavbarLink
+              key={item + index}
+              className="nav-link"
+              onClick={() =>
+                navigate(`/${item.toLowerCase()}`, { replace: true })
+              }
+              active={window.location.pathname.includes(item.toLowerCase())}
+            >
+              {item}
+            </NavbarLink>
+          ))}
+        </div>
+      </NavbarCollapseSmall>
       <div className="collapse navbar-collapse">
         <div className="navbar-nav ms-auto py-0 pe-4">
           {navPaths.map((item, index) => (
@@ -115,4 +146,12 @@ const NavbarCmpt = () => {
   );
 };
 
-export default NavbarCmpt;
+const mapStateToProps = (state) => ({
+  navbarOpened: state.auth.navbarOpened,
+});
+
+const mapDispatchToProps = {
+  setNavbar: setNavbar,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarCmpt);

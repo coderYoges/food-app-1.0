@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 const BannerContainer = styled.div`
   background-position: top;
@@ -8,6 +9,7 @@ const BannerContainer = styled.div`
   width: 100%;
   background-color: #fff;
   padding: 1rem 0.75rem;
+  margin-top: ${({ navbarOpened }) => (navbarOpened ? "300px" : "0")};
 `;
 
 const BannerWrapper = styled.div`
@@ -86,9 +88,12 @@ const StyledImgShortTop = styled.img`
   border-radius: 0.2rem;
 `;
 
-const BannerCmpt = () => {
+const BannerCmpt = ({ navbarOpened }) => {
   return (
-    <BannerContainer>
+    <BannerContainer
+      navbarOpened={navbarOpened}
+      className={` ${navbarOpened ? "roll-margin" : ""}`}
+    >
       <BannerWrapper>
         <div className="d-flex row align-items-center mt-0 mt-lg-5">
           <div className="col-lg-6">
@@ -124,13 +129,13 @@ const BannerCmpt = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <BannerTitle>About Us -----</BannerTitle>
+            <BannerTitle className="mt-4 mt-lg-0">About Us -----</BannerTitle>
             <div
               style={{
                 boxShadow: "0 0 45px rgba(0, 0, 0, 0.08)",
                 transition: "0.5s",
                 cursor: "pointer",
-                padding: '2rem'
+                padding: "2rem",
               }}
             >
               <BannerHeader>Welcome to H.A. Briyani</BannerHeader>
@@ -175,4 +180,8 @@ const BannerCmpt = () => {
   );
 };
 
-export default BannerCmpt;
+const mapStateToProps = (state) => ({
+  navbarOpened: state.auth.navbarOpened,
+});
+
+export default connect(mapStateToProps)(BannerCmpt);

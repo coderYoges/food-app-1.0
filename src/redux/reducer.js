@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const AuthInitialState = {
   currentPage: "",
+  navbarOpened: false
 };
 
 const authSlice = createSlice({
@@ -12,9 +13,13 @@ const authSlice = createSlice({
       ...state,
       currentPage: action.payload,
     }),
+    setNavbar: (state, action) => ({
+      ...state,
+      navbarOpened: action.payload
+    })
   },
 });
 
-export const { setPage } = authSlice.actions;
+export const { setPage, setNavbar } = authSlice.actions;
 
 export default authSlice.reducer;
