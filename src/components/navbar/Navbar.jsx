@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { navPaths } from "../../config";
 import { connect } from "react-redux";
 import { setNavbar } from "../../redux/reducer";
+import { headerConstants } from "../../config";
 
 const NavbarContainer = styled.nav`
   @media (min-width: 992px) {
@@ -85,6 +85,7 @@ const EnquiryLink = styled.a`
   font-weight: 600;
   font-size: 1rem;
   transition: 0.5s;
+  cursor: pointer;
   &:hover {
     background-color: green;
   }
@@ -99,19 +100,27 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
   return (
     <NavbarContainer className="navbar navbar-expand-lg bg-dark px-4 px-lg-5 py-3">
       <NavbarBrand className="p-0">
-        <NavbarBanner>H.A.Briyani</NavbarBanner>
+        <NavbarBanner>{headerConstants.title}</NavbarBanner>
       </NavbarBrand>
       <NavbarCollapse
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarCollapse"
-        onClick={()=> setNavOpened(!isNavOpened)}
+        onClick={() => setNavOpened(!isNavOpened)}
       >
         <span className="fa fa-bars"></span>
       </NavbarCollapse>
-      <NavbarCollapseSmall className={`roll-height ${navbarOpened ? "d-block" : "d-none"}`}>
-        <div className="navbar-nav ms-auto py-0 pe-4">
-          {navPaths.map((item, index) => (
+      <NavbarCollapseSmall
+        className={`roll-height ${navbarOpened ? "d-block" : "d-none"}`}
+      >
+        <div
+          className="navbar-nav ms-auto py-0 pe-4"
+          onClick={() => {
+            setNavOpened(false);
+            setNavbar(false);
+          }}
+        >
+          {headerConstants.paths.map((item, index) => (
             <NavbarLink
               key={item + index}
               className="nav-link"
@@ -126,8 +135,14 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
         </div>
       </NavbarCollapseSmall>
       <div className="collapse navbar-collapse">
-        <div className="navbar-nav ms-auto py-0 pe-4">
-          {navPaths.map((item, index) => (
+        <div
+          className="navbar-nav ms-auto py-0 pe-4"
+          onClick={() => {
+            setNavOpened(false);
+            setNavbar(false);
+          }}
+        >
+          {headerConstants.paths.map((item, index) => (
             <NavbarLink
               key={item + index}
               className="nav-link"
@@ -140,7 +155,7 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
             </NavbarLink>
           ))}
         </div>
-        <EnquiryLink>Enquiry</EnquiryLink>
+        <EnquiryLink>{headerConstants.link}</EnquiryLink>
       </div>
     </NavbarContainer>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { aboutPageConstants } from "../../config";
 
 const BannerContainer = styled.div`
   background-position: top;
@@ -51,10 +52,8 @@ const BannerContent = styled.p`
 `;
 
 const CounterWrapper = styled.div`
-  padding: 0 1rem;
+  padding: 0;
   align-items: center;
-  border-left: 5px solid #fea116 !important;
-  border-right: 5px solid #fea116 !important;
   display: flex;
 `;
 
@@ -96,7 +95,45 @@ const BannerCmpt = ({ navbarOpened }) => {
     >
       <BannerWrapper>
         <div className="d-flex row align-items-center mt-0 mt-lg-5">
-          <div className="col-lg-6">
+          <div
+            className="col-lg-6 rounded p-4 animated fadeInUp"
+            style={{
+              boxShadow: "0 0 45px rgba(0, 0, 0, 0.08)",
+              transition: "0.5s",
+              cursor: "pointer",
+              padding: "0 2rem",
+            }}
+          >
+            <BannerTitle className="mt-4 mt-lg-0 text-center">
+              {aboutPageConstants.title}
+            </BannerTitle>
+            <div>
+              <BannerContent>{aboutPageConstants.content}</BannerContent>
+              <BannerContent>{aboutPageConstants.content}</BannerContent>
+              <BannerContent>{aboutPageConstants.content}</BannerContent>
+            </div>
+            <div className="row g-4 my-2 justify-content-center">
+              <div className="col-md-6">
+                <CounterWrapper>
+                  <CounterBox className="years-counter"></CounterBox>
+                  <div className="ps-4">
+                    <h6
+                      className="text-uppercase mb-0"
+                      style={{
+                        color: "#0f172b",
+                        fontWeight: "800",
+                        fontSize: "1rem",
+                        fontFamily: "Nunito,sans-serif",
+                      }}
+                    >
+                      {aboutPageConstants.yearsOfExperience}
+                    </h6>
+                  </div>
+                </CounterWrapper>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 mt-4 mtl-lg-0">
             <div className="row g-3">
               <div className="col-6 text-start">
                 <StyledImage
@@ -116,61 +153,15 @@ const BannerCmpt = ({ navbarOpened }) => {
                 <StyledImgShortTop
                   className="rounded animated zoomIn"
                   src={require("../../assets/images/about-3.jpg")}
-                  alt="about-img-2"
+                  alt="about-img-3"
                 />
               </div>
               <div className="col-6 text-end">
                 <StyledImage
                   className="rounded animated zoomIn"
                   src={require("../../assets/images/about-4.jpg")}
-                  alt="about-img-2"
+                  alt="about-img-4"
                 />
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <BannerTitle className="mt-4 mt-lg-0">About Us -----</BannerTitle>
-            <div
-              style={{
-                boxShadow: "0 0 45px rgba(0, 0, 0, 0.08)",
-                transition: "0.5s",
-                cursor: "pointer",
-                padding: "2rem",
-              }}
-            >
-              <BannerHeader>Welcome to H.A. Briyani</BannerHeader>
-              <BannerContent>
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet
-                lorem sit.
-              </BannerContent>
-              <BannerContent>
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet
-                lorem sit.
-              </BannerContent>
-            </div>
-            <div className="row g-4 my-2 justify-content-center">
-              <div className="col-sm-6">
-                <CounterWrapper>
-                  <CounterBox className="years-counter"></CounterBox>
-                  <div className="ps-4">
-                    <p className="mb-0" style={{ color: "#666565" }}>
-                      Years of
-                    </p>
-                    <h6
-                      className="text-uppercase mb-0"
-                      style={{
-                        color: "#0f172b",
-                        fontWeight: "800",
-                        fontSize: "1rem",
-                        fontFamily: "Nunito,sans-serif",
-                      }}
-                    >
-                      Experience
-                    </h6>
-                  </div>
-                </CounterWrapper>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { IoIosArrowForward } from "react-icons/io";
+import { RiLoginCircleFill } from "react-icons/ri";
 
 const SectionTitle = styled.h4`
   position: relative;
@@ -111,7 +112,6 @@ const FooterCmpt = () => {
             <SectionAddress>Perambur,</SectionAddress>
             <SectionAddress>Chennai-11.</SectionAddress>
           </SectionContent>
-        
         </div>
         {/* Services section */}
         <div className="col-lg-3 col-md-6 my-3">
@@ -128,7 +128,6 @@ const FooterCmpt = () => {
           <SectionLink href="#">
             <IoIosArrowForward /> Raw Materials
           </SectionLink>
-        
         </div>
         {/* Contact Us section */}
         <div className="col-lg-3 col-md-6 my-3">
@@ -156,6 +155,11 @@ const FooterCmpt = () => {
             </SocialLink>
             <SocialLink href="#">
               <i className="fab fa-linkedin-in"></i>
+            </SocialLink>
+            <SocialLink href="#">
+              <RiLoginCircleFill
+                style={{ minWidth: "1rem", minHeight: "1rem" }}
+              />
             </SocialLink>
           </div>
         </div>

@@ -1669,7 +1669,7 @@ body {
 }
 
 .roll-height {
-  animation: roll-height 1.5s;
+  animation: roll-height 1s;
 }
 
 @keyframes roll-margin {
@@ -1682,5 +1682,5 @@ body {
 }
 
 .roll-margin {
-  animation: roll-margin 1.5s;
+  animation: roll-margin 1s;
 }

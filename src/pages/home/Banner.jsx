@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 import background from "../../assets/images/bg-hero.jpg";
+import { homePageConstants } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const bannerImage = require("../../assets/images/banner.jpeg");
 
@@ -13,6 +16,7 @@ const BannerContainer = styled.div`
   width: 100%;
   background-color: #0f172b;
   padding: 3rem 0.75rem;
+  margin-top: ${({ navbarOpened }) => (navbarOpened ? "300px" : "0")};
 `;
 
 const BannerWrapper = styled.div`
@@ -30,11 +34,6 @@ const BannerTitle = styled.h1`
   font-size: calc(1rem + 1vw);
   font-family: "Briem Hand", cursive;
   cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: #fea116;
-    text-decoration-style: wavy;
-  }
 `;
 
 const BannerImage = styled.img`
@@ -46,7 +45,7 @@ const BannerImage = styled.img`
   }
 `;
 
-const EnquiryLink = styled.a`
+const EnquiryLink = styled.span`
   color: #fff;
   background-color: #fea116;
   border-radius: 0.5rem;
@@ -63,24 +62,41 @@ const EnquiryLink = styled.a`
   }
 `;
 
-const BannerCmpt = () => {
+const BannerCmpt = ({ navbarOpened }) => {
+  const navigate = useNavigate();
+  const handleEnquiry = () => {
+    navigate("/about", { replace: true });
+  };
   return (
-    <BannerContainer>
+    <BannerContainer
+      navbarOpened={navbarOpened}
+      className={` ${navbarOpened ? "roll-margin" : ""}`}
+    >
       <BannerWrapper>
-        <div className="d-flex row align-items-center mt-0 mt-lg-5">
+        <div className="d-flex row align-items-center mt-0 mt-lg-2">
+          <BannerTitle
+            className="col-lg-12 text-center"
+            style={{
+              color: "#fea116",
+              marginBottom: "2rem",
+              textDecoration: "none",
+            }}
+          >
+            {homePageConstants.title}
+          </BannerTitle>
           <div className="col-lg-6 text-center text-lg-start">
             <BannerTitle className="animated slideInLeft ">
-              Eat our food, Feel the flavour,
-              <br />
-              Enjoy the taste, Fill your soul.
+              {homePageConstants.header}
             </BannerTitle>
             <p className="text-white animated slideInLeft mb-2 pb-2">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-              diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-              lorem sit clita duo justo magna dolore erat amet
+              {homePageConstants.subHeader}
             </p>
-
-            <EnquiryLink href="#" className="animated slideInLeft">Read more</EnquiryLink>
+            <EnquiryLink
+              className="animated slideInLeft"
+              onClick={handleEnquiry}
+            >
+              {homePageConstants.link}
+            </EnquiryLink>
           </div>
           <div className="col-lg-6 text-center text-lg-end overflow-hidden">
             <BannerImage
@@ -95,4 +111,8 @@ const BannerCmpt = () => {
   );
 };
 
-export default BannerCmpt;
+const mapStateToProps = (state) => ({
+  navbarOpened: state.auth.navbarOpened,
+});
+
+export default connect(mapStateToProps)(BannerCmpt);
