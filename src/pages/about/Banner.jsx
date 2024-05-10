@@ -55,6 +55,7 @@ const CounterWrapper = styled.div`
   padding: 0;
   align-items: center;
   display: flex;
+  text-align: center;
 `;
 
 const CounterBox = styled.div`
