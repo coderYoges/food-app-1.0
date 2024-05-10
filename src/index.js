@@ -7,6 +7,7 @@ import store from "./redux/store";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 

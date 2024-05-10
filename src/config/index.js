@@ -120,3 +120,38 @@ export const contactPageConstants = {
     },
   ],
 };
+
+export const testimonialsConstants = {
+  title: "---- Testimonial ----",
+  subTitle: "Our Clients say!!!",
+  testimonies: [
+    {
+      message:
+        " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
+      clientName: "Client1",
+      clientProfession: "Client1-Profession",
+      imagePath: require('../assets/images/testimonial-1.jpg')
+    },
+    {
+      message:
+        " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
+      clientName: "Client2",
+      clientProfession: "Client2-Profession",
+      imagePath: require('../assets/images/testimonial-2.jpg')
+    },
+    {
+      message:
+        " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
+      clientName: "Client3",
+      clientProfession: "Client3-Profession",
+      imagePath: require('../assets/images/testimonial-3.jpg')
+    },
+    {
+      message:
+        " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
+      clientName: "Client4",
+      clientProfession: "Client4-Profession",
+      imagePath: require('../assets/images/testimonial-4.jpg')
+    },
+  ],
+};

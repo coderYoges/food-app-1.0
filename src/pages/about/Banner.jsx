@@ -14,11 +14,14 @@ const BannerContainer = styled.div`
 `;
 
 const BannerWrapper = styled.div`
-  padding: 3rem 3rem 0 3rem;
+  padding: 3rem 1rem 0 1rem;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  @media (min-width: 762px) {
+    padding: 3rem 3rem 0 3rem;
+  }
 `;
 
 const BannerTitle = styled.h1`
