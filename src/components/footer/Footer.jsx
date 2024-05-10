@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiLoginCircleFill } from "react-icons/ri";
+import { footerConstants } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const SectionTitle = styled.h4`
   position: relative;
@@ -14,7 +16,7 @@ const SectionTitle = styled.h4`
   font-family: "Pacifico", cursive;
 `;
 
-const SectionLink = styled.a`
+const SectionLink = styled.span`
   display: block;
   margin-bottom: 1rem;
   padding: 0;
@@ -26,6 +28,7 @@ const SectionLink = styled.a`
   transition: 0.3s;
   font-family: "Nunito", sans-serif;
   text-decoration: none;
+  cursor: pointer;
   &:hover {
     letter-spacing: 0.2rem;
   }
@@ -79,6 +82,7 @@ const SectionAddress = styled.div`
 `;
 
 const FooterCmpt = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="mt-5 animated fadeIn mx-0 px-0"
@@ -87,61 +91,53 @@ const FooterCmpt = () => {
       <div className="row m-0 px-4 px-lg-5 pt-5">
         {/* Company section */}
         <div className="col-lg-3 col-md-6 my-3">
-          <SectionTitle>Company -----</SectionTitle>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Home
-          </SectionLink>
-          <SectionLink href="#">
-            <IoIosArrowForward /> About
-          </SectionLink>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Privacy Policy
-          </SectionLink>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Terms & Condition
-          </SectionLink>
+          <SectionTitle> {footerConstants.companyList.header}</SectionTitle>
+          {footerConstants.companyList.paths.map((company, index) => (
+            <SectionLink
+              key={"footer-company-" + index}
+              onClick={() => navigate(company.path, { replace: true })}
+            >
+              <IoIosArrowForward /> {company.title}
+            </SectionLink>
+          ))}
         </div>
         {/* Address section */}
         <div className="col-lg-3 col-md-6 my-3">
-          <SectionTitle>Locate Us -----</SectionTitle>
+          <SectionTitle>{footerConstants.addressList.header}</SectionTitle>
           <SectionContent>
             <i className="fa fa-map-marker-alt me-3"></i>
-            No 19/49, Teed's
-            <SectionAddress>Garden, 7th Street,</SectionAddress>
-            <SectionAddress>Sembiyam,</SectionAddress>
-            <SectionAddress>Perambur,</SectionAddress>
-            <SectionAddress>Chennai-11.</SectionAddress>
+            {footerConstants.addressList.content1}
+            {footerConstants.addressList.content.map((address, index) => (
+              <SectionAddress key={"footer-address-" + index}>
+                {address}
+              </SectionAddress>
+            ))}
           </SectionContent>
         </div>
         {/* Services section */}
         <div className="col-lg-3 col-md-6 my-3">
-          <SectionTitle>Services -----</SectionTitle>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Function Catering
-          </SectionLink>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Quality Food
-          </SectionLink>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Commercial Spaces
-          </SectionLink>
-          <SectionLink href="#">
-            <IoIosArrowForward /> Raw Materials
-          </SectionLink>
+          <SectionTitle>{footerConstants.servicesList.header}</SectionTitle>
+          {footerConstants.servicesList.paths.map((service, index) => (
+            <SectionLink key={"footer-service-" + index}>
+              <IoIosArrowForward /> {service.title}
+            </SectionLink>
+          ))}
         </div>
         {/* Contact Us section */}
         <div className="col-lg-3 col-md-6 my-3">
-          <SectionTitle>Contact Us -----</SectionTitle>
+          <SectionTitle>{footerConstants.contactList.header}</SectionTitle>
           <SectionContent>
             <i className="fa fa-phone-alt me-3"></i>
-            +91 9789925091
+            {footerConstants.contactList.phone1}
             <br />
             <span className="d-inline-block mx-3" />
-            <span className="d-inline-block pt-1">+91 7845682228 </span>
+            <span className="d-inline-block pt-1">
+              {footerConstants.contactList.phone2}
+            </span>
           </SectionContent>
           <SectionContent>
-            <i className="fa fa-envelope me-3 d-lg-none"></i>
-            h.a.briyani1974@gmail.com
+            <i className="fa fa-envelope me-3"></i>
+            {footerConstants.contactList.email}
           </SectionContent>
           <div className="d-flex">
             <SocialLink href="#">

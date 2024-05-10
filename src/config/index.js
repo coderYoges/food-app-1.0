@@ -1,8 +1,65 @@
 export const headerConstants = {
   title: "H.A.Briyani",
   paths: ["Home", "About", "Menu", "Gallery", "Contact"],
-  link: 'Enquiry',
-}
+  link: "Enquiry",
+};
+
+export const footerConstants = {
+  companyList: {
+    header: "Company -----",
+    paths: [
+      {
+        title: "Menu",
+        path: "/menu",
+      },
+      {
+        title: "Gallery",
+        path: "/gallery",
+      },
+      {
+        title: "Privacy Policy",
+        path: "/",
+      },
+      {
+        title: "Terms & Condition",
+        path: "/",
+      },
+    ],
+  },
+  addressList: {
+    header: "Locate Us -----",
+    content1: "No 19/49, Teed's",
+    content: ["Garden, 7th Street,", "Sembiyam,", "Perambur,", "Chennai-11."],
+  },
+  servicesList: {
+    header: "Services -----",
+    paths: [
+      {
+        title: "Function Catering",
+        path: "/",
+      },
+      {
+        title: "Quality Food",
+        path: "/",
+      },
+      {
+        title: "Commercial Spaces",
+        path: "/",
+      },
+      {
+        title: "Raw Materials",
+        path: "/",
+      },
+    ],
+  },
+  contactList: {
+    header: "Contact Us -----",
+    phone1: "+91 9789925091",
+    phone2: "+91 7845682228",
+    email: "h.a.briyani1974",
+    content: ["Garden, 7th Street,", "Sembiyam,", "Perambur,", "Chennai-11."],
+  },
+};
 
 export const homePageConstants = {
   title: "---- Welcome to H.A.Briyani ----",
@@ -40,9 +97,10 @@ export const homePageConstants = {
 
 export const aboutPageConstants = {
   title: '---- "About Us" ----',
-  content: ' Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.',
+  content:
+    " Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.",
   yearsOfExperience: "Years of Experience",
-}
+};
 
 export const contactPageConstants = {
   title: "---- Contact Us ----",
