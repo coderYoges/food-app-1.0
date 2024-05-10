@@ -1,15 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import NavbarCmpt from "../../components/navbar/Navbar";
 import ContentCmpt from "./Content";
 import FooterCmpt from "../../components/footer/Footer";
 
 const MenuPage = () => {
   return (
-    <div>
+    <Fragment>
       <NavbarCmpt />
       <ContentCmpt/>
       <FooterCmpt />
-    </div>
+    </Fragment>
   );
 };
 

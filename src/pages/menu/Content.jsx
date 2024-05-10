@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { menuPageConstants } from "../../config";
+import { IoRestaurantSharp } from "react-icons/io5";
+import { GiFruitBowl } from "react-icons/gi";
+import { GiWrappedSweet } from "react-icons/gi";
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -38,22 +42,31 @@ const ContentSubTitle = styled.h2`
 `;
 
 const ContentNavbar = styled.ul`
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   justify-content: center;
-  border-bottom: 3px solid #fea116;
-  display: inline-flex;
-  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
   margin: 0;
   padding: 0;
 `;
 
-const ContentNavbarList = styled.li`
-  padding: 0.2rem 1rem;
+const ContentImage = styled.img`
+  max-weight: 100%;
+  height: auto;
+  vertical-align: middle;
+  width: 80px;
+  border-radius: 4px;
+  flex-shrink: 0;
 `;
 
-const ContentNavbarItem = styled.span``;
-
 const ContentCmpt = ({ navbarOpened }) => {
+  const [menuItem, setMenuItem] = useState(0);
+  const iconStyles = {
+    color: "#fea116",
+    width: "2rem",
+    height: "1.5rem",
+  };
   return (
     <ContentContainer
       navbarOpened={navbarOpened}
@@ -61,21 +74,79 @@ const ContentCmpt = ({ navbarOpened }) => {
     >
       <ContentWrapper>
         <div className="text-center animated fadeInUp">
-          <ContentTitle>---- Food Menu ----</ContentTitle>
-          <ContentSubTitle>Most Popular Items</ContentSubTitle>
+          <ContentTitle>{menuPageConstants.header}</ContentTitle>
+          <ContentSubTitle>{menuPageConstants.subHeader}</ContentSubTitle>
         </div>
       </ContentWrapper>
-      <div className="text-center animated fadeInUp">
+      <div className="text-center animated fadeInUp py-3">
         <ContentNavbar>
-          {["Option1", "Option2", "Option3"].map((item, index) => (
+          {menuPageConstants.content.map((item, index) => (
             <li
-              key={index}
-              style={{ padding: "0.2rem 1rem", cursor: "pointer" }}
+              key={"menu-item-" + index}
+              style={{
+                cursor: "pointer",
+                display: "list-item",
+                textAlign: "-webkit-match-parent",
+                borderBottom: `3px solid ${
+                  menuItem === index ? "#fea116" : "#808080"
+                }`,
+                padding: "0 1rem",
+              }}
+              onClick={() => setMenuItem(index)}
             >
-              {item}
+              <a
+                className="d-flex align-items-center text-start mx-0 mx-lg-3 ms-0 pb-1"
+                style={{ textDecoration: "none" }}
+              >
+                {index === 0 ? (
+                  <IoRestaurantSharp style={iconStyles} />
+                ) : index === 1 ? (
+                  <GiFruitBowl style={iconStyles} />
+                ) : (
+                  <GiWrappedSweet style={iconStyles} />
+                )}
+
+                <div className="ps-3">
+                  <small className="text-body">{item.title}</small>
+                  <h6
+                    className="mt-n1 mb-0"
+                    style={{
+                      color: "#000",
+                      fontSize: "16px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {item.menu}
+                  </h6>
+                </div>
+              </a>
             </li>
           ))}
         </ContentNavbar>
+      </div>
+
+      <div className="row animated fadeInUp px-2 px-md-5 m-0 pt-3">
+        {menuPageConstants.content[menuItem].items.map((item, index) => (
+          <div
+            className="col-lg-6 my-3 "
+            key={"menu-receipe-" + index}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="d-flex align-items-center">
+              <ContentImage
+                src={require("../../assets/images/menu-1.jpg")}
+                alt="Menu-1"
+              />
+              <div className="w-100 flex flex-column text-start ps-4">
+                <h5 className="d-flex justify-content-between border-bottom pb-2">
+                  <span>{item.title}</span>
+                  <span style={{ color: "#fea116" }}>{item.price}</span>
+                </h5>
+                <small className="fst-italic">{"*" + item.label}</small>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </ContentContainer>
   );

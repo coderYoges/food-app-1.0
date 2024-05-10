@@ -39,9 +39,10 @@ const TestimonialItem = styled.div`
   background: "#fea116";
   border-color: "#fea116";
   transition: 0.5s;
-  border-radius: 2px;
+  border-radius: 1rem;
   padding: 1.5rem;
   border: 2px solid #dee2e6;
+
 `;
 
 const TestimonialCarouselItem = styled.div`

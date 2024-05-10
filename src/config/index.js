@@ -130,28 +130,145 @@ export const testimonialsConstants = {
         " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
       clientName: "Client1",
       clientProfession: "Client1-Profession",
-      imagePath: require('../assets/images/testimonial-1.jpg')
+      imagePath: require("../assets/images/testimonial-1.jpg"),
     },
     {
       message:
         " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
       clientName: "Client2",
       clientProfession: "Client2-Profession",
-      imagePath: require('../assets/images/testimonial-2.jpg')
+      imagePath: require("../assets/images/testimonial-2.jpg"),
     },
     {
       message:
         " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
       clientName: "Client3",
       clientProfession: "Client3-Profession",
-      imagePath: require('../assets/images/testimonial-3.jpg')
+      imagePath: require("../assets/images/testimonial-3.jpg"),
     },
     {
       message:
         " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
       clientName: "Client4",
       clientProfession: "Client4-Profession",
-      imagePath: require('../assets/images/testimonial-4.jpg')
+      imagePath: require("../assets/images/testimonial-4.jpg"),
+    },
+  ],
+};
+
+export const menuPageConstants = {
+  header: "---- Food Menu ----",
+  subHeader: "Most Popular Items",
+  content: [
+    {
+      title: "Popular",
+      menu: "Non Veg",
+      items: [
+        {
+          title: "Our Special Mutton Briyani",
+          price: "Rs.350",
+          label: "per person",
+        },
+        {
+          title: "Our Special Chicken Briyani",
+          price: "Rs.250",
+          label: "per person",
+        },
+        {
+          title: "Mutton Briyani Feast",
+          price: "Rs.300",
+          label: "per person",
+        },
+        {
+          title: "Chicken Briyani Feast",
+          price: "Rs.200",
+          label: "per person",
+        },
+        {
+          title: "Ghee rice with Dalcha",
+          price: "Rs.1000",
+          label: "per kg",
+        },
+        {
+          title: "Ghee rice with Mutton korma",
+          price: "Rs.1000",
+          label: "per kg",
+        },
+        {
+          title: "Ghee rice with Chicken korma",
+          price: "Rs.1000",
+          label: "per kg",
+        },
+        {
+          title: "Fish fry",
+          price: "Rs.160",
+          label: "per piece",
+        },
+        {
+          title: "Prawn fry",
+          price: "Rs.700",
+          label: "per kg",
+        },
+      ],
+    },
+    {
+      title: "Special",
+      menu: "Veg",
+      items: [
+        {
+          title: "Our Special Halakka Briyani",
+          price: "Rs.200",
+          label: "per person",
+        },
+        {
+          title: "Mushroom Briyani",
+          price: "Rs.200",
+          label: "per person",
+        },
+        {
+          title: "Veg Briyani",
+          price: "Rs.160",
+          label: "per person",
+        },
+
+        {
+          title: "Panner Tikka",
+          price: "Rs.60",
+          label: "per quantity",
+        },
+        {
+          title: "Butter Panner Masala",
+          price: "",
+          label: "",
+        },
+      ],
+    },
+    {
+      title: "Lovely",
+      menu: "Sweets",
+      items: [
+        {
+          title: "Gulab Jamun",
+          price: "Rs.10",
+          label: "per piece",
+        },
+        {
+          title: "Carrot Halwa",
+          price: "",
+          label: "",
+        },
+        {
+          title: "Muntajan Sweet",
+          price: "",
+          label: "",
+        },
+
+        {
+          title: "Firni Sweet",
+          price: "",
+          label: "",
+        },
+      ],
     },
   ],
 };
