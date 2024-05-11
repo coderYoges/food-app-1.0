@@ -1,5 +1,5 @@
 export const headerConstants = {
-  title: "H.A.Briyani",
+  title: "H.A.Biryani",
   paths: ["Home", "About", "Menu", "Gallery", "Contact"],
   link: "Enquiry",
 };
@@ -62,7 +62,7 @@ export const footerConstants = {
 };
 
 export const homePageConstants = {
-  title: "---- Welcome to H.A.Briyani ----",
+  title: "---- Welcome to H.A.Biryani ----",
   header: "Eat our food, Feel the flavour,\nEnjoy the taste, Fill your soul.",
   subHeader:
     "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqudiam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet",
