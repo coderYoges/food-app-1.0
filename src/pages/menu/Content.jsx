@@ -5,6 +5,9 @@ import { menuPageConstants } from "../../config";
 import { IoRestaurantSharp } from "react-icons/io5";
 import { GiFruitBowl } from "react-icons/gi";
 import { GiWrappedSweet } from "react-icons/gi";
+import { IoMdCloseCircle } from "react-icons/io";
+import { Modal } from "react-responsive-modal";
+import { isEmpty } from "lodash";
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -60,8 +63,34 @@ const ContentImage = styled.img`
   flex-shrink: 0;
 `;
 
+const ModalHeader = styled.h2`
+  color: #696969;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: calc(1rem + 1vw);
+  font-family: "Pacifico", cursive;
+  cursor: pointer;
+  margin: 1rem 0;
+  text-align: center;
+`;
+
+const ModalCloseIcon = styled(IoMdCloseCircle)`
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #000;
+`;
+
 const ContentCmpt = ({ navbarOpened }) => {
   const [menuItem, setMenuItem] = useState(0);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState({});
+
+  const onOpenModal = (menu) => {
+    setModalOpen(true);
+    setSelectedMenu(menu);
+  };
+
+  const onCloseModal = () => setModalOpen(false);
   const iconStyles = {
     color: "#fea116",
     width: "2rem",
@@ -126,11 +155,12 @@ const ContentCmpt = ({ navbarOpened }) => {
       </div>
 
       <div className="row animated fadeInUp px-2 px-md-5 m-0 pt-3">
-        {menuPageConstants.content[menuItem].items.map((item, index) => (
+        {menuPageConstants.content[menuItem].items.map((menu, index) => (
           <div
             className="col-lg-6 my-3 "
             key={"menu-receipe-" + index}
             style={{ cursor: "pointer" }}
+            onClick={() => onOpenModal(menu)}
           >
             <div className="d-flex align-items-center">
               <ContentImage
@@ -139,14 +169,57 @@ const ContentCmpt = ({ navbarOpened }) => {
               />
               <div className="w-100 flex flex-column text-start ps-4">
                 <h5 className="d-flex justify-content-between border-bottom pb-2">
-                  <span>{item.title}</span>
-                  <span style={{ color: "#fea116" }}>{item.price}</span>
+                  <span>{menu.title}</span>
+                  <span style={{ color: "#fea116" }}>{menu.price}</span>
                 </h5>
-                <small className="fst-italic">{"*" + item.label}</small>
+                <small className="fst-italic">{"*" + menu.label}</small>
               </div>
             </div>
           </div>
         ))}
+        <Modal
+          open={isModalOpen && !isEmpty(selectedMenu)}
+          onClose={onCloseModal}
+          center
+          closeIcon={<ModalCloseIcon />}
+          styles={{
+            modal: { backgroundColor: "pink" },
+            overlay: { opacity: "0.5" },
+          }}
+        >
+          <ModalHeader>{selectedMenu.title}</ModalHeader>
+          <ul>
+            {!isEmpty(selectedMenu) &&
+              !isEmpty(selectedMenu.receipes) &&
+              selectedMenu.receipes.map((receipe, index) => (
+                <li
+                  className="py-1"
+                  key={"receipe-item-" + index}
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    fontFamily: "Nunito, sans-serif",
+                  }}
+                >
+                  {receipe}
+                </li>
+              ))}
+          </ul>
+          <div
+            className="rounded mx-2"
+            style={{
+              cursor: "pointer",
+              backgroundColor: "#696969",
+              fontSize: "18px",
+              fontWeight: "600",
+              fontFamily: "Nunito, sans-serif",
+            }}
+          >
+            <span className="d-block text-center p-2 text-light">
+              {selectedMenu.price} {selectedMenu.label}
+            </span>
+          </div>
+        </Modal>
       </div>
     </ContentContainer>
   );
