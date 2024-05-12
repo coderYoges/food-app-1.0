@@ -173,6 +173,7 @@ export const menuPageConstants = {
           price: "Rs.350",
           label: "per person",
           menuId: "001",
+          minimumOrder: "200",
           receipes: [
             "Welcome Drink",
             "Mutton Biryani",
@@ -197,6 +198,7 @@ export const menuPageConstants = {
           title: "Our Special Chicken Briyani",
           price: "Rs.250",
           label: "per person",
+          minimumOrder: "200",
           menuId: "002",
           receipes: [
             "Welcome Drink",
@@ -222,6 +224,7 @@ export const menuPageConstants = {
           title: "Mutton Briyani Feast",
           price: "Rs.300",
           label: "per person",
+          minimumOrder: "50",
           menuId: "003",
           receipes: [
             "Mutton Biryani",
@@ -239,6 +242,7 @@ export const menuPageConstants = {
           title: "Chicken Briyani Feast",
           price: "Rs.200",
           label: "per person",
+          minimumOrder: "50",
           menuId: "004",
           receipes: [
             "Chicken Biryani",
@@ -257,6 +261,7 @@ export const menuPageConstants = {
           price: "Rs.900",
           label: "per kg",
           menuId: "005",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -264,6 +269,7 @@ export const menuPageConstants = {
           price: "Rs.1000",
           label: "per kg",
           menuId: "006",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -271,6 +277,7 @@ export const menuPageConstants = {
           price: "Rs.800",
           label: "per kg",
           menuId: "007",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -278,6 +285,7 @@ export const menuPageConstants = {
           price: "Rs.160",
           label: "per piece",
           menuId: "008",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -285,6 +293,7 @@ export const menuPageConstants = {
           price: "Rs.700",
           label: "per kg",
           menuId: "009",
+          minimumOrder: "20",
           receipes: [],
         },
 
@@ -293,8 +302,9 @@ export const menuPageConstants = {
           price: "Rs.450",
           label: "full",
           menuId: "010",
+          minimumOrder: "40",
           receipes: [
-            "full - Rs. 450",
+            "full - Rs.450",
             "half - Rs.250",
             "Fresh Mayonnaise",
             "Green Chutney",
@@ -305,8 +315,8 @@ export const menuPageConstants = {
           price: "Rs.15",
           label: "per piece",
           menuId: "011",
-          receipes: [
-          ]
+          minimumOrder: "50",
+          receipes: [],
         },
       ],
     },
@@ -315,12 +325,13 @@ export const menuPageConstants = {
       menu: "Veg",
       items: [
         {
-          title: "Our Special Halakka Briyani",
+          title: "Our Special Jackfruit Briyani",
           price: "Rs.200",
           label: "per person",
           menuId: "101",
+          minimumOrder: "50",
           receipes: [
-            "Palakka Briyani",
+            "Jackfruit Briyani",
             "Bread Halwa Sweet",
             "Brinjal Chutney",
             "Onion Chutney",
@@ -336,6 +347,7 @@ export const menuPageConstants = {
           price: "Rs.200",
           label: "per person",
           menuId: "102",
+          minimumOrder: "50",
           receipes: [
             "Mushroom Briyani",
             "Bread Halwa Sweet",
@@ -353,6 +365,7 @@ export const menuPageConstants = {
           price: "Rs.160",
           label: "per person",
           menuId: "103",
+          minimumOrder: "50",
           receipes: [
             "Veg Briyani",
             "Bread Halwa Sweet",
@@ -367,9 +380,10 @@ export const menuPageConstants = {
         },
         {
           title: "Panner Tikka",
-          price: "Rs.60",
-          label: "per piece",
+          price: "Rs.300",
+          label: "per kg",
           menuId: "104",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -377,6 +391,7 @@ export const menuPageConstants = {
           price: "Rs.400",
           label: "per kg",
           menuId: "105",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -384,13 +399,15 @@ export const menuPageConstants = {
           price: "Rs.300",
           label: "per kg",
           menuId: "106",
+          minimumOrder: "50",
           receipes: [],
         },
         {
           title: "Butter Panner Masala",
-          price: "Rs.60",
-          label: "per piece",
+          price: "Rs.600",
+          label: "per kg",
           menuId: "107",
+          minimumOrder: "50",
           receipes: [],
         },
         {
@@ -398,8 +415,8 @@ export const menuPageConstants = {
           price: "Rs.15",
           label: "per piece",
           menuId: "011",
-          receipes: [
-          ]
+          minimumOrder: "50",
+          receipes: [],
         },
       ],
     },
@@ -411,18 +428,21 @@ export const menuPageConstants = {
           title: "Gulab Jamun",
           price: "Rs.10",
           label: "per piece",
+          minimumOrder: "50",
           menuId: "201",
         },
         {
           title: "Carrot Halwa",
           price: "Rs.600",
           label: "per kg",
+          minimumOrder: "50",
           menuId: "202",
         },
         {
           title: "Muntajan Sweet",
           price: "Rs.1000",
           label: "per kg",
+          minimumOrder: "50",
           menuId: "203",
         },
 
@@ -430,12 +450,14 @@ export const menuPageConstants = {
           title: "Firni Sweet",
           price: "Rs.1000",
           label: "per kg",
+          minimumOrder: "50",
           menuId: "204",
         },
         {
           title: "Fruit Salad",
           price: "Rs.15",
           label: "per cup",
+          minimumOrder: "50",
           menuId: "205",
         },
       ],
