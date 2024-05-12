@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { setNavbar } from "../../redux/reducer";
-import { headerConstants } from "../../config";
+import { headerConstants, enquiryConstants } from "../../config";
+import { MdOutlineAnnouncement } from "react-icons/md";
+import { Modal } from "react-responsive-modal";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const NavbarContainer = styled.nav`
   @media (min-width: 992px) {
@@ -91,8 +94,27 @@ const EnquiryLink = styled.a`
   }
 `;
 
+const ModalHeader = styled.h2`
+  color: #fea116;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: calc(1rem + 1vw);
+  font-family: "Pacifico", cursive;
+  cursor: pointer;
+  margin: 1rem 0;
+  text-align: center;
+`;
+
+const ModalCloseIcon = styled(IoMdCloseCircle)`
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #000;
+`;
+
 const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
   const [isNavOpened, setNavOpened] = useState(false);
+  const [enquiryOpened, setEnquiryOpened] = useState(false);
+
   useEffect(() => {
     setNavbar(isNavOpened);
   }, [isNavOpened]);
@@ -102,14 +124,26 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
       <NavbarBrand className="p-0">
         <NavbarBanner>{headerConstants.title}</NavbarBanner>
       </NavbarBrand>
-      <NavbarCollapse
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-        onClick={() => setNavOpened(!isNavOpened)}
-      >
-        <span className="fa fa-bars"></span>
-      </NavbarCollapse>
+      <div>
+        <NavbarCollapse
+          type="button"
+          className="mx-2"
+          onClick={() => setEnquiryOpened(!enquiryOpened)}
+        >
+          <MdOutlineAnnouncement
+            className="text-light"
+            style={{ opacity: "0.55" }}
+          />
+        </NavbarCollapse>
+        <NavbarCollapse
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          onClick={() => setNavOpened(!isNavOpened)}
+        >
+          <span className="fa fa-bars"></span>
+        </NavbarCollapse>
+      </div>
       <NavbarCollapseSmall
         className={`roll-height ${navbarOpened ? "d-block" : "d-none"}`}
       >
@@ -157,6 +191,18 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
         </div>
         <EnquiryLink>{headerConstants.link}</EnquiryLink>
       </div>
+      <Modal
+        open={enquiryOpened}
+        onClose={() => setEnquiryOpened(false)}
+        center
+        closeIcon={<ModalCloseIcon />}
+        styles={{
+          modal: { backgroundColor: "#fff" },
+          overlay: { opacity: "0.5" },
+        }}
+      >
+        <ModalHeader>{enquiryConstants.title}</ModalHeader>
+      </Modal>
     </NavbarContainer>
   );
 };

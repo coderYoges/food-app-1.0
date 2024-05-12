@@ -4,6 +4,10 @@ export const headerConstants = {
   link: "Enquiry",
 };
 
+export const enquiryConstants = {
+  title: "---- Enquire Us ----",
+};
+
 export const footerConstants = {
   companyList: {
     header: "Company -----",
@@ -172,13 +176,13 @@ export const menuPageConstants = {
           receipes: [
             "Welcome Drink",
             "Mutton Biryani",
-            "Bismillah",
             "Bread Halwa Sweet",
             "Brinjal Chutney",
             "Onion Chutney",
             "Chicken 65",
             "Chicken Gravy",
             "Rumani Roti",
+            "Chappati",
             "Ice Cream",
             "Beeda",
             "Popcorn",
@@ -203,6 +207,7 @@ export const menuPageConstants = {
             "Chicken 65",
             "Chicken Gravy",
             "Rumani Roti",
+            "Chappati",
             "Ice Cream",
             "Beeda",
             "Popcorn",
@@ -249,7 +254,7 @@ export const menuPageConstants = {
         },
         {
           title: "Ghee rice with Dalcha",
-          price: "Rs.1000",
+          price: "Rs.900",
           label: "per kg",
           menuId: "005",
           receipes: [],
@@ -263,7 +268,7 @@ export const menuPageConstants = {
         },
         {
           title: "Ghee rice with Chicken korma",
-          price: "Rs.1000",
+          price: "Rs.800",
           label: "per kg",
           menuId: "007",
           receipes: [],
@@ -281,6 +286,27 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "009",
           receipes: [],
+        },
+
+        {
+          title: "Tandoori Chicken",
+          price: "Rs.450",
+          label: "full",
+          menuId: "010",
+          receipes: [
+            "full - Rs. 450",
+            "half - Rs.250",
+            "Fresh Mayonnaise",
+            "Green Chutney",
+          ],
+        },
+        {
+          title: "Chappati",
+          price: "Rs.15",
+          label: "per piece",
+          menuId: "011",
+          receipes: [
+          ]
         },
       ],
     },
@@ -339,7 +365,6 @@ export const menuPageConstants = {
             "Service Boys",
           ],
         },
-
         {
           title: "Panner Tikka",
           price: "Rs.60",
@@ -348,11 +373,33 @@ export const menuPageConstants = {
           receipes: [],
         },
         {
-          title: "Butter Panner Masala",
-          price: "",
-          label: "",
+          title: "Panner 65",
+          price: "Rs.400",
+          label: "per kg",
           menuId: "105",
           receipes: [],
+        },
+        {
+          title: "Mushroom 65",
+          price: "Rs.300",
+          label: "per kg",
+          menuId: "106",
+          receipes: [],
+        },
+        {
+          title: "Butter Panner Masala",
+          price: "Rs.60",
+          label: "per piece",
+          menuId: "107",
+          receipes: [],
+        },
+        {
+          title: "Chappati",
+          price: "Rs.15",
+          label: "per piece",
+          menuId: "011",
+          receipes: [
+          ]
         },
       ],
     },
@@ -368,22 +415,28 @@ export const menuPageConstants = {
         },
         {
           title: "Carrot Halwa",
-          price: "",
-          label: "",
+          price: "Rs.600",
+          label: "per kg",
           menuId: "202",
         },
         {
           title: "Muntajan Sweet",
-          price: "",
-          label: "",
+          price: "Rs.1000",
+          label: "per kg",
           menuId: "203",
         },
 
         {
           title: "Firni Sweet",
-          price: "",
-          label: "",
+          price: "Rs.1000",
+          label: "per kg",
           menuId: "204",
+        },
+        {
+          title: "Fruit Salad",
+          price: "Rs.15",
+          label: "per cup",
+          menuId: "205",
         },
       ],
     },

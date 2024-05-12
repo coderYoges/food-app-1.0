@@ -114,7 +114,7 @@ const TestimonialCmpt = () => {
           <TestimonialCarouselItem key={"testimonial" + index}>
             <TestimonialItem>
               <i
-                class="fa fa-quote-left fa-2x mb-3"
+                className="fa fa-quote-left fa-2x mb-3"
                 style={{ color: "#fea116" }}
               ></i>
               <p>{testimony.message}</p>
