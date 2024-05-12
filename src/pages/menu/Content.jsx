@@ -70,7 +70,7 @@ const ModalHeader = styled.h2`
   font-size: calc(1rem + 1vw);
   font-family: "Pacifico", cursive;
   cursor: pointer;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   text-align: center;
 `;
 
@@ -188,6 +188,9 @@ const ContentCmpt = ({ navbarOpened }) => {
           }}
         >
           <ModalHeader>{selectedMenu.title}</ModalHeader>
+          <div className="text-danger text-center mb-4">
+            {"* Minimum Order - " + selectedMenu.minimumOrder}
+          </div>
           <ul>
             {!isEmpty(selectedMenu) &&
               !isEmpty(selectedMenu.receipes) &&

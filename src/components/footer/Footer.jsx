@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiLoginCircleFill } from "react-icons/ri";
 import { footerConstants } from "../../config";
 import { useNavigate } from "react-router-dom";
+import LoginModal from "../login/Login";
 
 const SectionTitle = styled.h4`
   position: relative;
@@ -47,7 +48,7 @@ const SectionContent = styled.div`
   text-decoration: none;
 `;
 
-const SocialLink = styled.a`
+const SocialLink = styled.span`
   margin-right: 5px;
   width: 35px;
   height: 35px;
@@ -82,6 +83,7 @@ const SectionAddress = styled.div`
 `;
 
 const FooterCmpt = () => {
+  const [showLogin, setShowLogin] = useState(false);
   const navigate = useNavigate();
   return (
     <div
@@ -152,7 +154,7 @@ const FooterCmpt = () => {
             <SocialLink href="#">
               <i className="fab fa-linkedin-in"></i>
             </SocialLink>
-            <SocialLink href="#">
+            <SocialLink onClick={() => setShowLogin(true)}>
               <RiLoginCircleFill
                 style={{ minWidth: "1rem", minHeight: "1rem" }}
               />
@@ -160,6 +162,7 @@ const FooterCmpt = () => {
           </div>
         </div>
       </div>
+      <LoginModal showOpen={showLogin} onClose={() => setShowLogin(false)} />
     </div>
   );
 };

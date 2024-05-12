@@ -6,6 +6,7 @@ export const headerConstants = {
 
 export const enquiryConstants = {
   title: "---- Enquire Us ----",
+  button: "Send Message"
 };
 
 export const footerConstants = {
