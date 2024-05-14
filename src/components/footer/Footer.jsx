@@ -82,6 +82,13 @@ const SectionAddress = styled.div`
   padding-top: 0.5rem;
 `;
 
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+`;
+
 const FooterCmpt = () => {
   const [showLogin, setShowLogin] = useState(false);
   const navigate = useNavigate();
@@ -130,16 +137,22 @@ const FooterCmpt = () => {
           <SectionTitle>{footerConstants.contactList.header}</SectionTitle>
           <SectionContent>
             <i className="fa fa-phone-alt me-3"></i>
-            {footerConstants.contactList.phone1}
+            <StyledLink href="tel:+919789925091">
+              {footerConstants.contactList.phone1}
+            </StyledLink>
             <br />
             <span className="d-inline-block mx-3" />
             <span className="d-inline-block pt-1">
-              {footerConstants.contactList.phone2}
+              <StyledLink href="tel:+7845682228">
+                {footerConstants.contactList.phone2}
+              </StyledLink>
             </span>
           </SectionContent>
           <SectionContent>
             <i className="fa fa-envelope me-3"></i>
-            {footerConstants.contactList.email}
+            <StyledLink href="mailto:h.a.briyani1974@gmail.com">
+              {footerConstants.contactList.email}
+            </StyledLink>
           </SectionContent>
           <div className="d-flex">
             <SocialLink href="#">
