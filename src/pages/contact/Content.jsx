@@ -55,9 +55,10 @@ const MailIconStyled = styled(IoIosMail)`
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: #fff;
   cursor: pointer;
   user-select: none;
+  color: #696969;
+  font-weight: 600;
 `;
 
 const ContentCmpt = ({ navbarOpened }) => {
@@ -96,12 +97,16 @@ const ContentCmpt = ({ navbarOpened }) => {
                     ) : (
                       <PhoneIconStyled />
                     )}
-                    {index === contactPageConstants.contactItems.length - 1 ? (
-                      <StyledLink href={`tel:${item.content}`}>
+                    {index === 0 ? (
+                      <StyledLink href="tel:+919789925091">
+                        {item.content}
+                      </StyledLink>
+                    ) : index === 1 ? (
+                      <StyledLink href="tel:+917845682228">
                         {item.content}
                       </StyledLink>
                     ) : (
-                      <StyledLink ref="mailto:h.a.briyani1974@gmail.com">
+                      <StyledLink href="mailto:h.a.briyani1974@gmail.com">
                         {item.content}
                       </StyledLink>
                     )}
