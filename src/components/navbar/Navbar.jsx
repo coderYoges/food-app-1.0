@@ -206,7 +206,7 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
       >
         <ModalHeader>{enquiryConstants.title}</ModalHeader>
         <div className="mt-5 ">
-          <EnquireCmpt />
+          <EnquireCmpt onClose={() => setEnquiryOpened(false)} />
         </div>
       </Modal>
     </NavbarContainer>

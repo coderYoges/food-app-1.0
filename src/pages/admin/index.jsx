@@ -63,11 +63,52 @@ const StyledInput = styled.input`
   border-radius: 2px;
 `;
 
+const HeaderWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  height: 70px;
+  justify-content: spacebetween;
+  align-items: center;
+  background-color: #424242;
+  color: #c7c7c7;
+  border-bottom: 1px solid #c7c7c7;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`;
+
+const HeaderIcon = styled.div`
+  display: flex;
+  font-size: 24px;
+  height: 50px;
+  width: 50px;
+  margin: 10px 15px;
+  color: #424242;
+  background-color: #f44336;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ServiceMessage = styled.p`
+  text-align: left;
+  margin: 0;
+  padding: 10px 15px;
+  background-color: #424242;
+  color: #c7c7c7;
+  overflow-wrap: break-word;
+  min-height: 100px;
+  max-height: 100px;
+  border-bottom: 1px solid #c7c7c7;
+`;
+
 const ServiceItem = styled.div`
   cursor: pointer;
   font-family: "Heebo", sans-serif;
-  background-color: #fff;
+  background-color: #424242;
+  color: #c7c7c7;
   transition: 0.5s;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 const AdminPage = ({ navbarOpened }) => {
@@ -113,51 +154,24 @@ const AdminPage = ({ navbarOpened }) => {
                 className="col-lg-3 col-sm-6 mt-4 animated fadeInUp"
                 key={"user-id-" + index}
               >
-                <ServiceItem
-                  className="rounded bg-gray"
-                  style={{ backgroundColor: "#d3d3d3" }}
-                >
-                  <AdminTitle className="text-danger text-center py-3 mb-0">
-                    {user.firstName + " " + user.lastName}
-                  </AdminTitle>
-                  <p
-                    className="mb-2 p-2"
-                    style={{
-                      minHeight: "100px",
-                      color: "black",
-                      overflowWrap: "break-word",
-                      fontSize: "1.2rem",
-                      fontWeight: "600",
-                    }}
-                  >
-                    {user.message}
-                  </p>
-                  <p
-                    className="text-light py-1 px-3 m-0"
-                    style={{
-                      backgroundColor: "rgb(15,23,43",
-                    }}
-                  >
+                <HeaderWrapper>
+                  <HeaderIcon>{user.firstName[0]}</HeaderIcon>
+                  <div style={{ textAlign: "left" }}>
+                    <div style={{ fontWeight: 600 }}>
+                      {user.firstName + " " + user.lastName}
+                    </div>
+                    <div> {user.date}</div>
+                  </div>
+                </HeaderWrapper>
+                <ServiceMessage>{user.message}</ServiceMessage>
+                <ServiceItem>
+                  <p className=" py-1 px-3 m-0">
                     <FaPhone className="me-2" />
                     {user.mobile}
                   </p>
-                  <p
-                    className="text-light py-1 px-3 m-0"
-                    style={{
-                      backgroundColor: "rgb(15,23,43",
-                    }}
-                  >
+                  <p className=" py-1 px-3 m-0">
                     <MdEmail className="me-2" />
                     {user.email}
-                  </p>
-                  <p
-                    className="text-light py-1 px-3 m-0"
-                    style={{
-                      backgroundColor: "rgb(15,23,43",
-                    }}
-                  >
-                    <MdEmail className="me-2" />
-                    {user.date}
                   </p>
                 </ServiceItem>
               </div>

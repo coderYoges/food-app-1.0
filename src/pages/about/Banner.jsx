@@ -34,16 +34,6 @@ const BannerTitle = styled.h1`
   margin-bottom: 1rem;
 `;
 
-const BannerHeader = styled.h1`
-  color: #0f172b;
-  font-weight: 800;
-  line-height: 1.2;
-  font-size: calc(1.375rem + 1.5vw);
-  font-family: "Nunito", sans-serif;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-`;
-
 const BannerContent = styled.p`
   color: #666565;
   font-weight: 400;
@@ -52,6 +42,7 @@ const BannerContent = styled.p`
   font-family: "Heebo", sans-serif;
   cursor: pointer;
   margin-bottom: 1.5rem;
+  text-align: justify;
 `;
 
 const CounterWrapper = styled.div`
@@ -59,6 +50,7 @@ const CounterWrapper = styled.div`
   align-items: center;
   display: flex;
   text-align: center;
+  justify-content: center;
 `;
 
 const CounterBox = styled.div`
@@ -111,13 +103,12 @@ const BannerCmpt = ({ navbarOpened }) => {
             <BannerTitle className="mt-4 mt-lg-0 text-center">
               {aboutPageConstants.title}
             </BannerTitle>
-            <div>
-              <BannerContent>{aboutPageConstants.content}</BannerContent>
-              <BannerContent>{aboutPageConstants.content}</BannerContent>
-              <BannerContent>{aboutPageConstants.content}</BannerContent>
+            <div >
+              <BannerContent>{aboutPageConstants.content2}</BannerContent>
+              <BannerContent>{aboutPageConstants.content1}</BannerContent>
             </div>
-            <div className="row g-4 my-2 justify-content-center">
-              <div className="col-md-6">
+        
+             
                 <CounterWrapper>
                   <CounterBox className="years-counter"></CounterBox>
                   <div className="ps-4">
@@ -134,8 +125,8 @@ const BannerCmpt = ({ navbarOpened }) => {
                     </h6>
                   </div>
                 </CounterWrapper>
-              </div>
-            </div>
+           
+            
           </div>
           <div className="col-lg-6 mt-4 mtl-lg-0">
             <div className="row g-3">

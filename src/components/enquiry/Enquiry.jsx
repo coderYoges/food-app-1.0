@@ -37,7 +37,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const EnquireCmpt = () => {
+const EnquireCmpt = ({ onClose }) => {
   return (
     <Formik
       validateOnBlur={true}
@@ -61,6 +61,7 @@ const EnquireCmpt = () => {
             message: values.message,
             date: new Date().toString().slice(0, 15),
           });
+          onClose && onClose();
         } catch (err) {
           console.error(err);
         }

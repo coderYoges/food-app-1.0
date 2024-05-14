@@ -6,7 +6,7 @@ export const headerConstants = {
 
 export const enquiryConstants = {
   title: "---- Enquire Us ----",
-  button: "Send Message"
+  button: "Send Message",
 };
 
 export const footerConstants = {
@@ -102,8 +102,10 @@ export const homePageConstants = {
 
 export const aboutPageConstants = {
   title: '---- "About Us" ----',
-  content:
-    " Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.",
+  content1:
+    "H.A Biryani Catering is a Chennai based catering with years of wealthy experience. We are one of the most sustainable caterers in Chennai and understand our customers needs. We are accustomed to the changing trends and tastes in food and luxurious fine dining.",
+  content2:
+    "The word “biryani” comes from the Persian word “birian” which means “fried before cooking.” One could conclude that the biryani originated in Iran (previously known as Persia). Another interesting story traces the origins of the dish to Mumtaz Mahal (1593-1631), Shah Jahan's queen who inspired the Taj Mahal.",
   yearsOfExperience: "Years of Experience",
 };
 
