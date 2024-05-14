@@ -53,6 +53,13 @@ const MailIconStyled = styled(IoIosMail)`
   height: 1.5rem;
 `;
 
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+`;
+
 const ContentCmpt = ({ navbarOpened }) => {
   return (
     <ContentContainer
@@ -89,7 +96,15 @@ const ContentCmpt = ({ navbarOpened }) => {
                     ) : (
                       <PhoneIconStyled />
                     )}
-                    {item.content}
+                    {index === contactPageConstants.contactItems.length - 1 ? (
+                      <StyledLink href={`tel:${item.content}`}>
+                        {item.content}
+                      </StyledLink>
+                    ) : (
+                      <StyledLink ref="mailto:h.a.briyani1974@gmail.com">
+                        {item.content}
+                      </StyledLink>
+                    )}
                   </p>
                 </div>
               ))}

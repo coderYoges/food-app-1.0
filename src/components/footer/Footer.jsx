@@ -143,7 +143,7 @@ const FooterCmpt = () => {
             <br />
             <span className="d-inline-block mx-3" />
             <span className="d-inline-block pt-1">
-              <StyledLink href="tel:+7845682228">
+              <StyledLink href="tel:+917845682228">
                 {footerConstants.contactList.phone2}
               </StyledLink>
             </span>
