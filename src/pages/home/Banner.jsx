@@ -91,7 +91,10 @@ const BannerCmpt = ({ navbarOpened }) => {
             <BannerTitle className="animated slideInLeft ">
               {homePageConstants.header}
             </BannerTitle>
-            <p className="text-white animated slideInLeft mb-2 pb-2">
+            <p
+              className="text-white animated slideInLeft mb-2 pb-2"
+              style={{ textAlign: "justify" }}
+            >
               {homePageConstants.subHeader}
             </p>
             <EnquiryLink

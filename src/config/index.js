@@ -70,7 +70,7 @@ export const homePageConstants = {
   title: "---- Welcome to H.A.Biryani ----",
   header: "Eat our food, Feel the flavour,\nEnjoy the taste, Fill your soul.",
   subHeader:
-    "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqudiam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet",
+    "Our Biryani in Chennai has turned so popular that this brand has become synonymous with a biryani variant. This frequented eatery is famous for its wood-fired cooked desi or naati style, mutton biryani. Starting its journey about a 17 years back, it rose to fame in the shortest period. Today, H.A Biryani is among India's most favourite names. People come from all over to have an early start.",
   link: "Read more about us",
   services: [
     {
