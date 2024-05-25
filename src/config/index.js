@@ -471,3 +471,45 @@ export const menuPageConstants = {
     },
   ],
 };
+
+export const galleryPageConstants = {
+  header: "---- Gallery ----",
+  subHeader: "Our Memories",
+  services: [
+    "Function Catering",
+    "Quality Food",
+    "Own Cooking Spaces",
+    "Wholesale Materials",
+  ],
+  galleryImages: [
+    [
+      "gallery-catering-01.jpeg",
+      "gallery-catering-02.jpeg",
+      "gallery-catering-03.jpeg",
+      "gallery-catering-04.jpeg",
+      "gallery-catering-05.jpeg",
+      "gallery-catering-06.jpeg",
+      "gallery-catering-07.jpeg",
+      "gallery-catering-08.jpeg",
+    ],
+    [],
+    [
+      'gallery-place-01.jpeg',
+      'gallery-place-02.jpeg',
+      'gallery-place-03.jpeg',
+      'gallery-place-04.jpeg',
+      'gallery-place-05.jpeg',
+      'gallery-place-06.jpeg',
+      'gallery-place-07.jpeg',
+      'gallery-place-08.jpeg',
+      'gallery-place-09.jpeg',
+      'gallery-place-10.jpeg',
+      'gallery-place-11.jpeg',
+      'gallery-place-12.jpeg',
+      'gallery-place-13.jpeg',
+      'gallery-place-14.jpeg',
+      'gallery-place-15.jpeg',
+    ],
+    []
+  ],
+};

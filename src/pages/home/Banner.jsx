@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import background from "../../assets/images/bg-hero.jpg";
 import { homePageConstants } from "../../config";
 import { useNavigate } from "react-router-dom";
-
-const bannerImage = require("../../assets/images/banner.jpeg");
+import { VscDebugStart, VscStopCircle } from "react-icons/vsc";
 
 const BannerContainer = styled.div`
   background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)),
@@ -39,15 +38,6 @@ const BannerTitle = styled.h1`
   cursor: pointer;
 `;
 
-const BannerImage = styled.img`
-  border-radius: 2rem;
-  border: 1px solid #fff;
-  cursor: pointer;
-  &:hover {
-    border: 2px solid #fea116;
-  }
-`;
-
 const EnquiryLink = styled.span`
   color: #fff;
   background-color: #fea116;
@@ -65,7 +55,27 @@ const EnquiryLink = styled.span`
   }
 `;
 
+const VideoWrapper = styled.div`
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const BannerCmpt = ({ navbarOpened }) => {
+  const vidRef = useRef(null);
+
+  const handlePlayVideo = () => {
+    vidRef.current.play();
+  };
+
+  const handleStopVideo = () => {
+    vidRef.current.pause();
+  };
+
   const navigate = useNavigate();
   const handleEnquiry = () => {
     navigate("/about", { replace: true });
@@ -78,15 +88,28 @@ const BannerCmpt = ({ navbarOpened }) => {
       <BannerWrapper>
         <div className="d-flex row align-items-center mt-0 mt-lg-2">
           <BannerTitle
-            className="col-lg-12 text-center"
+            className="col-lg-12 text-center mb-md-5"
             style={{
               color: "#fea116",
-              marginBottom: "2rem",
+              marginBottom: "1rem",
               textDecoration: "none",
             }}
           >
             {homePageConstants.title}
           </BannerTitle>
+          <div className="col-lg-12 text-center mb-4 d-md-none">
+            <img
+              src={require("../../assets/images/food-briyani-modified.png")}
+              alt="Logo-Img"
+              style={{
+                width: "8rem",
+                height: "8rem",
+                margin: "0 auto",
+                display: "block",
+              }}
+            />
+          </div>
+
           <div className="col-lg-6 text-center text-lg-start">
             <BannerTitle className="animated slideInLeft ">
               {homePageConstants.header}
@@ -105,11 +128,30 @@ const BannerCmpt = ({ navbarOpened }) => {
             </EnquiryLink>
           </div>
           <div className="col-lg-6 text-center text-lg-end overflow-hidden">
-            <BannerImage
-              src={bannerImage}
-              alt="banner"
-              className="img-fluid animated slideInRight mt-5 mt-lg-0"
-            />
+            <VideoWrapper className="py-4">
+              <video
+                ref={vidRef}
+                src={require("../../assets/videos/front-page.mp4")}
+                type="video/mp4"
+                autoBuffer
+                autoPlay
+                className="rounded"
+              />
+            </VideoWrapper>
+            <div className="d-flex justify-content-center gap-3">
+              <VscDebugStart
+                color="#fff"
+                size="1.5rem"
+                className="pointer hovering"
+                onClick={handlePlayVideo}
+              />
+              <VscStopCircle
+                color="#fff"
+                size="1.5rem"
+                className="pointer hovering"
+                onClick={handleStopVideo}
+              />
+            </div>
           </div>
         </div>
       </BannerWrapper>

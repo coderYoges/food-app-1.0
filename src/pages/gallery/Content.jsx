@@ -1,30 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { aboutPageConstants } from "../../config";
+import { galleryPageConstants } from "../../config";
 
-const BannerContainer = styled.div`
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+const ContentContainer = styled.div`
   width: 100%;
-  background-color: #fff;
-  padding: 1rem 0.75rem;
+  padding: 3rem 0.75rem;
+  margin: 0 auto;
   margin-top: ${({ navbarOpened }) => (navbarOpened ? "300px" : "0")};
 `;
 
-const BannerWrapper = styled.div`
-  padding: 3rem 1rem 0 1rem;
+const ContentWrapper = styled.div`
+  padding: 3rem 3rem 0 3rem;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  @media (min-width: 762px) {
-    padding: 3rem 3rem 0 3rem;
-  }
 `;
 
-const BannerTitle = styled.h1`
+const ContentTitle = styled.h1`
   color: #fea116;
   font-weight: 600;
   line-height: 1.5;
@@ -34,7 +28,7 @@ const BannerTitle = styled.h1`
   margin-bottom: 1rem;
 `;
 
-const BannerHeader = styled.h1`
+const ContentSubTitle = styled.h2`
   color: #0f172b;
   font-weight: 800;
   line-height: 1.2;
@@ -44,134 +38,86 @@ const BannerHeader = styled.h1`
   margin-bottom: 1.5rem;
 `;
 
-const BannerContent = styled.p`
-  color: #666565;
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 1rem;
-  font-family: "Heebo", sans-serif;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-`;
-
-const CounterWrapper = styled.div`
-  padding: 0;
-  align-items: center;
+const ContentNavbar = styled.ul`
+  margin-bottom: 1rem;
+  justify-content: center;
   display: flex;
-  text-align: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 `;
 
-const CounterBox = styled.div`
-  color: #fea116;
+const ContentNavItem = styled.li`
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 15px;
+  color: ${(props) => (props.active ? "#fdbe33" : "#030f27")};
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  background: ${(props) => (props.active ? "#030f27" : "#fdbe33")};
+  border: none;
+  &:hover {
+    background: #030f27;
+    color: #fdbe33;
+  }
+`;
+
+const ContentImage = styled.img`
+  vertical-align: middle;
+  height: auto;
+  border-radius: 1rem;
   flex-shrink: 0;
-  font-size: calc(1.425rem + 2.1vw);
-  font-weight: 800;
-  line-height: 1.2;
+  size: contain;
 `;
 
-const StyledImage = styled.img`
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.2rem;
-`;
-
-const StyledImgShort = styled.img`
-  margin-top: 25%;
-  width: 75%;
-  max-width: 75%;
-  height: auto;
-  border-radius: 0.2rem;
-`;
-
-const StyledImgShortTop = styled.img`
-  width: 75%;
-  max-width: 75%;
-  height: auto;
-  border-radius: 0.2rem;
-`;
-
-const BannerCmpt = ({ navbarOpened }) => {
+const ContentCmpt = ({ navbarOpened }) => {
+  const [menuItem, setMenuItem] = useState(0);
   return (
-    <BannerContainer
+    <ContentContainer
       navbarOpened={navbarOpened}
       className={` ${navbarOpened ? "roll-margin" : ""}`}
     >
-      <BannerWrapper>
-        <div className="d-flex row align-items-center mt-0 mt-lg-5">
-          <div
-            className="col-lg-6 rounded p-4 animated fadeInUp"
-            style={{
-              boxShadow: "0 0 45px rgba(0, 0, 0, 0.08)",
-              transition: "0.5s",
-              cursor: "pointer",
-              padding: "0 2rem",
-            }}
-          >
-            <BannerTitle className="mt-4 mt-lg-0 text-center">
-              {aboutPageConstants.title}
-            </BannerTitle>
-            <div>
-              <BannerContent>{aboutPageConstants.content}</BannerContent>
-              <BannerContent>{aboutPageConstants.content}</BannerContent>
-              <BannerContent>{aboutPageConstants.content}</BannerContent>
-            </div>
-            <div className="row g-4 my-2 justify-content-center">
-              <div className="col-md-6">
-                <CounterWrapper>
-                  <CounterBox className="years-counter"></CounterBox>
-                  <div className="ps-4">
-                    <h6
-                      className="text-uppercase mb-0"
-                      style={{
-                        color: "#0f172b",
-                        fontWeight: "800",
-                        fontSize: "1rem",
-                        fontFamily: "Nunito,sans-serif",
-                      }}
-                    >
-                      {aboutPageConstants.yearsOfExperience}
-                    </h6>
-                  </div>
-                </CounterWrapper>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-6 mt-4 mtl-lg-0">
-            <div className="row g-3">
-              <div className="col-6 text-start">
-                <StyledImage
-                  className="rounded animated zoomIn"
-                  src={require("../../assets/images/about-1.jpg")}
-                  alt="about-img-1"
-                />
-              </div>
-              <div className="col-6 text-start">
-                <StyledImgShort
-                  className="rounded animated zoomIn"
-                  src={require("../../assets/images/about-2.jpg")}
-                  alt="about-img-2"
-                />
-              </div>
-              <div className="col-6 text-end">
-                <StyledImgShortTop
-                  className="rounded animated zoomIn"
-                  src={require("../../assets/images/about-3.jpg")}
-                  alt="about-img-3"
-                />
-              </div>
-              <div className="col-6 text-end">
-                <StyledImage
-                  className="rounded animated zoomIn"
-                  src={require("../../assets/images/about-4.jpg")}
-                  alt="about-img-4"
-                />
-              </div>
-            </div>
-          </div>
+      <ContentWrapper>
+        <div className="text-center animated fadeInUp">
+          <ContentTitle>{galleryPageConstants.header}</ContentTitle>
+          <ContentSubTitle>{galleryPageConstants.subHeader}</ContentSubTitle>
         </div>
-      </BannerWrapper>
-    </BannerContainer>
+      </ContentWrapper>
+      <div className="text-center animated fadeInUp">
+        <ContentNavbar>
+          {galleryPageConstants.services.map((service, index) => (
+            <ContentNavItem
+              className="m-2"
+              key={"services-" + index}
+              onClick={() => setMenuItem(index)}
+              active={menuItem === index}
+            >
+              {service}
+            </ContentNavItem>
+          ))}
+        </ContentNavbar>
+      </div>
+
+      <div className="row animated fadeInUp px-2 px-md-5 m-0 pt-3">
+        {galleryPageConstants.galleryImages[menuItem].map((image, index) => (
+          <div
+            className="col-md-6 my-4 "
+            key={image + index}
+            style={{ cursor: "pointer" }}
+          >
+            <div className=" d-flex justify-content-center ">
+              <ContentImage
+                src={require(`../../assets/images/${image}`)}
+                alt={image}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </ContentContainer>
   );
 };
 
@@ -179,4 +125,4 @@ const mapStateToProps = (state) => ({
   navbarOpened: state.auth.navbarOpened,
 });
 
-export default connect(mapStateToProps)(BannerCmpt);
+export default connect(mapStateToProps)(ContentCmpt);

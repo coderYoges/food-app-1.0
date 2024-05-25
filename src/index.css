@@ -1684,3 +1684,11 @@ body {
 .roll-margin {
   animation: roll-margin 1s;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.hovering :hover {
+  color: red;
+}
