@@ -128,7 +128,7 @@ const BannerCmpt = ({ navbarOpened }) => {
             </EnquiryLink>
           </div>
           <div className="col-lg-6 text-center text-lg-end overflow-hidden">
-            <VideoWrapper className="py-4">
+            <VideoWrapper className="pt-4 pb-3">
               <video
                 ref={vidRef}
                 src={require("../../assets/videos/front-page.mp4")}
@@ -138,16 +138,16 @@ const BannerCmpt = ({ navbarOpened }) => {
                 className="rounded"
               />
             </VideoWrapper>
-            <div className="d-flex justify-content-center gap-3">
+            <div className="d-flex justify-content-center gap-4">
               <VscDebugStart
                 color="#fff"
-                size="1.5rem"
+                size="2rem"
                 className="pointer hovering"
                 onClick={handlePlayVideo}
               />
               <VscStopCircle
                 color="#fff"
-                size="1.5rem"
+                size="2rem"
                 className="pointer hovering"
                 onClick={handleStopVideo}
               />

@@ -163,10 +163,12 @@ const ContentCmpt = ({ navbarOpened }) => {
             onClick={() => onOpenModal(menu)}
           >
             <div className="d-flex align-items-center">
-              <ContentImage
-                src={require("../../assets/images/menu-1.jpg")}
-                alt="Menu-1"
-              />
+              {menu.imagePath && (
+                <ContentImage
+                  src={require(`../../assets/images/${menu.imagePath}`)}
+                  alt={menu.imagePath}
+                />
+              )}
               <div className="w-100 flex flex-column text-start ps-4">
                 <h5 className="d-flex justify-content-between border-bottom pb-2">
                   <span>{menu.title}</span>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { galleryPageConstants } from "../../config";
+import {useLocation} from 'react-router-dom';
+import { get } from "lodash";
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -74,7 +76,9 @@ const ContentImage = styled.img`
 `;
 
 const ContentCmpt = ({ navbarOpened }) => {
-  const [menuItem, setMenuItem] = useState(0);
+  const location = useLocation();
+  const selectedServiceId = get(location,'state.selectedServiceId', 0)
+  const [menuItem, setMenuItem] = useState(selectedServiceId);
   return (
     <ContentContainer
       navbarOpened={navbarOpened}
@@ -108,7 +112,7 @@ const ContentCmpt = ({ navbarOpened }) => {
             key={image + index}
             style={{ cursor: "pointer" }}
           >
-            <div className=" d-flex justify-content-center ">
+            <div className=" d-flex justify-content-center">
               <ContentImage
                 src={require(`../../assets/images/${image}`)}
                 alt={image}

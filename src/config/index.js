@@ -177,6 +177,7 @@ export const menuPageConstants = {
           label: "per person",
           menuId: "001",
           minimumOrder: "200",
+          imagePath: 'gallery-food-01.jpg',
           receipes: [
             "Welcome Drink",
             "Mutton Biryani",
@@ -204,6 +205,7 @@ export const menuPageConstants = {
           label: "per person",
           minimumOrder: "200",
           menuId: "002",
+          imagePath: 'gallery-food-02.png',
           receipes: [
             "Welcome Drink",
             "Chicken Biryani",
@@ -231,6 +233,7 @@ export const menuPageConstants = {
           label: "per person",
           minimumOrder: "50",
           menuId: "003",
+          imagePath: 'gallery-food-01.jpg',
           receipes: [
             "Mutton Biryani",
             "Bread Halwa Sweet",
@@ -250,6 +253,7 @@ export const menuPageConstants = {
           label: "per person",
           minimumOrder: "50",
           menuId: "004",
+          imagePath: 'gallery-food-02.png',
           receipes: [
             "Chicken Biryani",
             "Bread Halwa Sweet",
@@ -269,6 +273,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "005",
           minimumOrder: "50",
+          imagePath: 'gallery-food-09.jpg',
           receipes: [],
         },
         {
@@ -277,6 +282,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "006",
           minimumOrder: "50",
+          imagePath: 'gallery-food-09.jpg',
           receipes: [],
         },
         {
@@ -285,6 +291,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "007",
           minimumOrder: "50",
+          imagePath: 'gallery-food-09.jpg',
           receipes: [],
         },
         {
@@ -293,6 +300,7 @@ export const menuPageConstants = {
           label: "per piece",
           menuId: "008",
           minimumOrder: "50",
+          imagePath: 'gallery-food-15.jpg',
           receipes: [],
         },
         {
@@ -301,6 +309,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "009",
           minimumOrder: "20",
+          imagePath: 'gallery-food-20.jpg',
           receipes: [],
         },
 
@@ -310,6 +319,7 @@ export const menuPageConstants = {
           label: "full",
           menuId: "010",
           minimumOrder: "40",
+          imagePath: 'gallery-food-03.jpg',
           receipes: [
             "full - Rs.450",
             "half - Rs.250",
@@ -323,6 +333,7 @@ export const menuPageConstants = {
           label: "per piece",
           menuId: "011",
           minimumOrder: "50",
+          imagePath: 'gallery-food-18.jpg',
           receipes: [],
         },
       ],
@@ -337,6 +348,7 @@ export const menuPageConstants = {
           label: "per person",
           menuId: "101",
           minimumOrder: "50",
+          imagePath: 'gallery-food-04.jpg',
           receipes: [
             "Jackfruit Briyani",
             "Bread Halwa Sweet",
@@ -355,6 +367,7 @@ export const menuPageConstants = {
           label: "per person",
           menuId: "102",
           minimumOrder: "50",
+          imagePath: 'gallery-food-05.jpg',
           receipes: [
             "Mushroom Briyani",
             "Bread Halwa Sweet",
@@ -373,6 +386,7 @@ export const menuPageConstants = {
           label: "per person",
           menuId: "103",
           minimumOrder: "50",
+          imagePath: 'gallery-food-07.jpg',
           receipes: [
             "Veg Briyani",
             "Bread Halwa Sweet",
@@ -391,6 +405,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "104",
           minimumOrder: "50",
+          imagePath: 'gallery-food-08.jpg',
           receipes: [],
         },
         {
@@ -399,6 +414,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "105",
           minimumOrder: "50",
+          imagePath: 'gallery-food-11.png',
           receipes: [],
         },
         {
@@ -407,6 +423,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "106",
           minimumOrder: "50",
+          imagePath: 'gallery-food-12.jpg',
           receipes: [],
         },
         {
@@ -415,6 +432,7 @@ export const menuPageConstants = {
           label: "per kg",
           menuId: "107",
           minimumOrder: "50",
+          imagePath: 'gallery-food-13.jpg',
           receipes: [],
         },
         {
@@ -423,6 +441,7 @@ export const menuPageConstants = {
           label: "per piece",
           menuId: "011",
           minimumOrder: "50",
+          imagePath: 'gallery-food-18.jpg',
           receipes: [],
         },
       ],
@@ -437,6 +456,7 @@ export const menuPageConstants = {
           label: "per piece",
           minimumOrder: "50",
           menuId: "201",
+          imagePath: 'gallery-food-14.jpg',
         },
         {
           title: "Carrot Halwa",
@@ -444,6 +464,7 @@ export const menuPageConstants = {
           label: "per kg",
           minimumOrder: "50",
           menuId: "202",
+          imagePath: 'gallery-food-17.jpg',
         },
         {
           title: "Muntajan Sweet",
@@ -451,6 +472,7 @@ export const menuPageConstants = {
           label: "per kg",
           minimumOrder: "50",
           menuId: "203",
+          imagePath: 'gallery-food-19.jpg',
         },
 
         {
@@ -459,6 +481,7 @@ export const menuPageConstants = {
           label: "per kg",
           minimumOrder: "50",
           menuId: "204",
+          imagePath: 'gallery-food-10.jpg',
         },
         {
           title: "Fruit Salad",
@@ -466,6 +489,7 @@ export const menuPageConstants = {
           label: "per cup",
           minimumOrder: "50",
           menuId: "205",
+          imagePath: 'gallery-food-21.jpg',
         },
       ],
     },
@@ -492,7 +516,29 @@ export const galleryPageConstants = {
       "gallery-catering-07.jpeg",
       "gallery-catering-08.jpeg",
     ],
-    [],
+    [
+      'gallery-food-01.jpg',
+      'gallery-food-02.png',
+      'gallery-food-03.jpg',
+      'gallery-food-04.jpg',
+      'gallery-food-05.jpg',
+      'gallery-food-06.jpg',
+      'gallery-food-07.jpg',
+      'gallery-food-08.jpg',
+      'gallery-food-09.jpg',
+      'gallery-food-10.jpg',
+      'gallery-food-11.png',
+      'gallery-food-12.jpg',
+      'gallery-food-13.jpg',
+      'gallery-food-14.jpg',
+      'gallery-food-15.jpg',
+      'gallery-food-16.jpg',
+      'gallery-food-17.jpg',
+      'gallery-food-18.jpg',
+      'gallery-food-19.jpg',
+      'gallery-food-20.jpg',
+      'gallery-food-21.jpg',
+    ],
     [
       'gallery-place-01.jpeg',
       'gallery-place-02.jpeg',
@@ -509,7 +555,12 @@ export const galleryPageConstants = {
       'gallery-place-13.jpeg',
       'gallery-place-14.jpeg',
       'gallery-place-15.jpeg',
+      'gallery-place-16.jpg',
+      'gallery-place-17.jpg',
     ],
-    []
+    [
+      'gallery-wholesale-01.jpg',
+      'gallery-wholesale-02.jpg'
+    ]
   ],
 };

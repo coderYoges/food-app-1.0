@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { homePageConstants } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const ServiceItem = styled.div`
   cursor: pointer;
@@ -18,6 +19,7 @@ const ServiceIcon = styled.i`
 `;
 
 const ServicesCmpt = () => {
+  const navigate = useNavigate();
   return (
     <div className="pt-5 px-4 px-lg-5">
       <div className="row g-4">
@@ -25,6 +27,9 @@ const ServicesCmpt = () => {
           <div
             className="col-lg-3 col-sm-6 animated fadeInUp"
             key={"service-id-" + index}
+            onClick={() =>
+              navigate("/gallery", { replace: true, state : {selectedServiceId : index } })
+            }
           >
             <ServiceItem className="rounded pt-3">
               <div className="p-4">

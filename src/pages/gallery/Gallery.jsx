@@ -3,11 +3,11 @@ import Navbar from "../../components/navbar/Navbar";
 import FooterCmpt from "../../components/footer/Footer";
 import Content from "./Content";
 
-const GalleryPage = () => {
+const GalleryPage = ({...props}) => {
     return (
         <Fragment>
             <Navbar />
-            <Content />
+            <Content {...props}/>
             <FooterCmpt />
         </Fragment>
     )
