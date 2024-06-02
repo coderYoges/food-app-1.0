@@ -45,7 +45,7 @@ const ServicesCmpt = () => {
                 >
                   {service.title}
                 </h5>
-                <p className="text-secondary">{service.content}</p>
+                {/* <p className="text-secondary">{service.content}</p> */}
               </div>
             </ServiceItem>
           </div>

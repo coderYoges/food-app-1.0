@@ -1,10 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import background from "../../assets/images/bg-hero.jpg";
 import { homePageConstants } from "../../config";
 import { useNavigate } from "react-router-dom";
-import { VscDebugStart, VscStopCircle } from "react-icons/vsc";
 
 const BannerContainer = styled.div`
   background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)),
@@ -55,27 +54,13 @@ const EnquiryLink = styled.span`
   }
 `;
 
-const VideoWrapper = styled.div`
-  overflow: hidden;
-  position: relative;
-  height: auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const ImageStyled = styled.img`
+  && {
+    border-radius: 0.5rem;
+  }
 `;
 
 const BannerCmpt = ({ navbarOpened }) => {
-  const vidRef = useRef(null);
-
-  const handlePlayVideo = () => {
-    vidRef.current.play();
-  };
-
-  const handleStopVideo = () => {
-    vidRef.current.pause();
-  };
-
   const navigate = useNavigate();
   const handleEnquiry = () => {
     navigate("/about", { replace: true });
@@ -128,30 +113,11 @@ const BannerCmpt = ({ navbarOpened }) => {
             </EnquiryLink>
           </div>
           <div className="col-lg-6 text-center text-lg-end overflow-hidden">
-            <VideoWrapper className="pt-4 pb-3">
-              <video
-                ref={vidRef}
-                src={require("../../assets/videos/front-page.mp4")}
-                type="video/mp4"
-                autoBuffer
-                autoPlay
-                className="rounded"
-              />
-            </VideoWrapper>
-            <div className="d-flex justify-content-center gap-4">
-              <VscDebugStart
-                color="#fff"
-                size="2rem"
-                className="pointer hovering"
-                onClick={handlePlayVideo}
-              />
-              <VscStopCircle
-                color="#fff"
-                size="2rem"
-                className="pointer hovering"
-                onClick={handleStopVideo}
-              />
-            </div>
+            <ImageStyled
+              src={require("../../assets/images/gallery-food-02.png")}
+              alt="food"
+              className="pt-4 pb-3 img-fluid"
+            />
           </div>
         </div>
       </BannerWrapper>

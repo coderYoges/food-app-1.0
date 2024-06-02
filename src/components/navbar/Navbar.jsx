@@ -119,6 +119,11 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
   useEffect(() => {
     setNavbar(isNavOpened);
   }, [isNavOpened]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const navigate = useNavigate();
   return (
     <NavbarContainer className="navbar navbar-expand-lg bg-dark px-4 px-lg-5 py-3">
