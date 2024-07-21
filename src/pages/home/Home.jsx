@@ -83,7 +83,7 @@ const HomePage = () => {
         <BannerCmpt />
         <ServicesCmpt />
         <FooterCmpt />
-        {/* <Modal
+        <Modal
           open={showModal}
           onClose={() => setShowModal(false)}
           center
@@ -114,7 +114,7 @@ const HomePage = () => {
               {footerConstants.contactList.phone2}
             </StyledLink>
           </SectionContent>
-        </Modal> */}
+        </Modal>
       </BannerContainer>
     </HomePageContainer>
   );
