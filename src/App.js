@@ -9,20 +9,25 @@ import { Navigate, Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 const App = ({ isAuthenticated }) => (
-  <Routes>
-    <Route path="/home" element={<HomePage />} />
-    <Route path="/about" element={<AboutPage />} />
-    <Route path="/menu" element={<MenuPage />} />
-    <Route path="/contact" element={<ContactPage />} />
-    <Route path="/gallery" element={<GalleryPage />} />
-    <Route
-      path="/admin"
-      element={
-        isAuthenticated ? <AdminPage /> : <Navigate replace to="/home" />
-      }
-    />
-    <Route path="/" element={<Navigate replace to="/home" />} />
-  </Routes>
+  // <Routes>
+  //   <Route path="/home" element={<HomePage />} />
+  //   <Route path="/about" element={<AboutPage />} />
+  //   <Route path="/menu" element={<MenuPage />} />
+  //   <Route path="/contact" element={<ContactPage />} />
+  //   <Route path="/gallery" element={<GalleryPage />} />
+  //   <Route
+  //     path="/admin"
+  //     element={
+  //       isAuthenticated ? <AdminPage /> : <Navigate replace to="/home" />
+  //     }
+  //   />
+  //   <Route path="/" element={<Navigate replace to="/home" />} />
+  // </Routes>
+  <div>
+  <h1>
+    Page is in development phase. Please wait for the deployment!
+  </h1>
+  </div>
 );
 
 const mapStateToProps = (state) => ({
