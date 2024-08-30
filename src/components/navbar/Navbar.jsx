@@ -114,26 +114,21 @@ const ModalCloseIcon = styled(IoMdCloseCircle)`
 `;
 
 const WhatsappWrapper = styled.button`
-  width: 150px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   position: fixed;
   right: 5vw;
-  top: 80vh;
+  top: 85vh;
   z-index: 100;
   background-color: rgb(37, 211, 102);
-  border-radius: 30px;
-`;
-
-const WhatsappText = styled.span`
-  font-weight: 600;
-  color: #fff;
+  border-radius: 25px;
 `;
 
 const WhatsappIcon = styled(FaWhatsapp)`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   color: #fff;
-  padding-left: 6px;
+  padding-left: 4px;
 `;
 
 const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
@@ -243,7 +238,6 @@ const NavbarCmpt = ({ navbarOpened, setNavbar }) => {
       <WhatsappWrapper
         onClick={() => window.open("https://wa.me/919789925091")}
       >
-        <WhatsappText>Whatsapp us</WhatsappText>
         <WhatsappIcon />
       </WhatsappWrapper>
     </React.Fragment>
