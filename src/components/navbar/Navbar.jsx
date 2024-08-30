@@ -118,7 +118,7 @@ const WhatsappWrapper = styled.button`
   height: 40px;
   position: fixed;
   right: 5vw;
-  top: 90vh;
+  top: 80vh;
   z-index: 100;
   background-color: rgb(37, 211, 102);
   border-radius: 30px;
