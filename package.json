@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
     "firebase": "^10.11.1",
+    "flipping-pages": "^3.1.0",
     "formik": "^2.4.6",
     "jquery": "^3.7.1",
     "lodash": "^4.17.21",

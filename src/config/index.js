@@ -136,7 +136,7 @@ export const testimonialsConstants = {
       message:
         " H.A. Briyani Catering Service exceeded our expectations in every way. We highly recommend them for any event, big or small.",
       clientName: "Akbar, Kodungaiyur",
-      clientProfession: "Mediacal profession, Chennai",
+      clientProfession: "Medical Labarotary, Chennai",
       imagePath: require("../assets/images/testimonial-1.jpeg"),
     },
     {

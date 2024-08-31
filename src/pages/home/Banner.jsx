@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import background from "../../assets/images/bg-hero.jpg";
 import { homePageConstants } from "../../config";
 import { useNavigate } from "react-router-dom";
+import { FlippingPages } from "flipping-pages";
+import "flipping-pages/dist/style.css";
 
 const BannerContainer = styled.div`
   background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)),
@@ -60,10 +62,43 @@ const ImageStyled = styled.img`
   }
 `;
 
+const FlippingWrapper = styled.div`
+  && {
+    height: 600px;
+    min-height: 400px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+`;
+
+const FlippingPage = styled.div`
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  touch-action: none;
+  border-radius: 12px;
+`;
+
+const FlippingPageImage = styled.img`
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+`;
+
 const BannerCmpt = ({ navbarOpened }) => {
   const navigate = useNavigate();
   const handleEnquiry = () => {
     navigate("/about", { replace: true });
+  };
+  const [selected, setSelected] = useState(0);
+
+  const back = () => {
+    setSelected((selected) => Math.max(selected - 1, 0));
+  };
+
+  const next = () => {
+    setSelected((selected) => Math.min(selected + 1, 2));
   };
   return (
     <BannerContainer
@@ -71,6 +106,9 @@ const BannerCmpt = ({ navbarOpened }) => {
       className={` ${navbarOpened ? "roll-margin" : ""}`}
     >
       <BannerWrapper>
+        {/* <button onClick={back}>Back</button>
+        <button onClick={next}>Next</button> */}
+
         <div className="d-flex row align-items-center mt-0 mt-lg-2">
           <BannerTitle
             className="col-lg-12 text-center mb-md-5"
@@ -94,6 +132,32 @@ const BannerCmpt = ({ navbarOpened }) => {
               }}
             />
           </div>
+          <FlippingWrapper>
+            <FlippingPages
+              direction="right-to-left"
+              onSwipeEnd={setSelected}
+              selected={selected}
+            >
+              <FlippingPage>
+                <FlippingPageImage
+                  src={require("../../assets/images/home-menu-page01.png")}
+                  alt="home-menu-page01"
+                />
+              </FlippingPage>
+              <FlippingPage>
+                <FlippingPageImage
+                  src={require("../../assets/images/home-menu-page02.png")}
+                  alt="home-menu-page02"
+                />
+              </FlippingPage>
+              <FlippingPage>
+                <FlippingPageImage
+                  src={require("../../assets/images/home-menu-page03.png")}
+                  alt="home-menu-page03"
+                />
+              </FlippingPage>
+            </FlippingPages>
+          </FlippingWrapper>
 
           <div className="col-lg-6 text-center text-lg-start">
             <BannerTitle className="animated slideInLeft ">
