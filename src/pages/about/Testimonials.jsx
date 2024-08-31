@@ -42,7 +42,6 @@ const TestimonialItem = styled.div`
   border-radius: 1rem;
   padding: 1.5rem;
   border: 2px solid #dee2e6;
-
 `;
 
 const TestimonialCarouselItem = styled.div`
@@ -56,6 +55,18 @@ const TestimonialImage = styled.img`
   height: 50px !important;
   border-radius: 50%;
   flex-shrink: 0;
+`;
+
+const TestimonialName = styled.h5`
+  margin-bottom: 0;
+  font-size: 16px;
+`;
+
+const TestimonialProfession = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 0;
+  color: #808080;
 `;
 
 const TestimonialCmpt = () => {
@@ -124,8 +135,10 @@ const TestimonialCmpt = () => {
                   alt={testimony.clientName}
                 />
                 <div className="ps-3">
-                  <h5 className="mb-1">{testimony.clientName}</h5>
-                  <small>{testimony.clientProfession}</small>
+                  <TestimonialName>{testimony.clientName}</TestimonialName>
+                  <TestimonialProfession>
+                    {testimony.clientProfession}
+                  </TestimonialProfession>
                 </div>
               </div>
             </TestimonialItem>

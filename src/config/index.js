@@ -135,30 +135,30 @@ export const testimonialsConstants = {
     {
       message:
         " H.A. Briyani Catering Service exceeded our expectations in every way. We highly recommend them for any event, big or small.",
-      clientName: "Akbar",
-      clientProfession: "Chennai-Tamilnadu",
+      clientName: "Akbar, Kodungaiyur",
+      clientProfession: "Mediacal profession, Chennai",
       imagePath: require("../assets/images/testimonial-1.jpeg"),
     },
     {
       message:
         " Best quality and best service, door step service also available from them. Totally, As a customer I feel good.",
-      clientName: "Ganesh",
-      clientProfession: "Chennai-Tamilnadu",
+      clientName: "Ganesh, Ramnagar",
+      clientProfession: "Advocate, Chennai",
       imagePath: require("../assets/images/testimonial-2.jpeg"),
     },
     {
       message:
-        " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
-      clientName: "Client3",
-      clientProfession: "Client3-Profession",
-      imagePath: require("../assets/images/testimonial-3.jpg"),
+        " One of the tastiest Briyani, I've ever tried in my life. Briyani is very flavourful and the chicken is really succulent.",
+      clientName: "Ravichandran, Kolathur",
+      clientProfession: "IT center, Chennai",
+      imagePath: require("../assets/images/testimonial-3.jpeg"),
     },
     {
       message:
-        " Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
-      clientName: "Client4",
-      clientProfession: "Client4-Profession",
-      imagePath: require("../assets/images/testimonial-4.jpg"),
+        " Very delicious Briyani, the preparation seems to be very good, and they deliver it on time as well.",
+      clientName: "Salman, Manali Road",
+      clientProfession: "Bank Manager, Chennai",
+      imagePath: require("../assets/images/testimonial-4.jpeg"),
     },
   ],
 };
