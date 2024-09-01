@@ -135,6 +135,7 @@ const BannerCmpt = ({ navbarOpened }) => {
               direction="right-to-left"
               onSwipeEnd={setSelected}
               selected={selected}
+              disableSwipe={true}
             >
               <FlippingPage>
                 <FlippingPageImage
