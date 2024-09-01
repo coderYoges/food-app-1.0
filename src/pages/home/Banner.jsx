@@ -68,14 +68,15 @@ const FlippingWrapper = styled.div`
     min-height: 400px;
     width: 100%;
     margin-bottom: 2rem;
+    @media (min-width: 762px) {
+      padding: 0 8rem;
+    }
   }
 `;
 
 const FlippingPage = styled.div`
   height: 100%;
   width: 100%;
-  user-select: none;
-  touch-action: none;
   border-radius: 12px;
 `;
 
@@ -106,9 +107,6 @@ const BannerCmpt = ({ navbarOpened }) => {
       className={` ${navbarOpened ? "roll-margin" : ""}`}
     >
       <BannerWrapper>
-        {/* <button onClick={back}>Back</button>
-        <button onClick={next}>Next</button> */}
-
         <div className="d-flex row align-items-center mt-0 mt-lg-2">
           <BannerTitle
             className="col-lg-12 text-center mb-md-5"
