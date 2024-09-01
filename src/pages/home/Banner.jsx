@@ -122,7 +122,7 @@ const BannerCmpt = ({ navbarOpened }) => {
   };
 
   const next = () => {
-    setSelected((selected) => Math.min(selected + 1, 2));
+    setSelected((selected) => Math.min(selected + 1, 3));
   };
   return (
     <BannerContainer
@@ -185,6 +185,12 @@ const BannerCmpt = ({ navbarOpened }) => {
                 <FlippingPageImage
                   src={require("../../assets/images/home-menu-page03.png")}
                   alt="home-menu-page03"
+                />
+              </FlippingPage>
+              <FlippingPage>
+                <FlippingPageImage
+                  src={require("../../assets/images/home-menu-page04.png")}
+                  alt="home-menu-page04"
                 />
               </FlippingPage>
             </FlippingPages>
