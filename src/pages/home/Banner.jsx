@@ -6,6 +6,7 @@ import { homePageConstants } from "../../config";
 import { useNavigate } from "react-router-dom";
 import { FlippingPages } from "flipping-pages";
 import "flipping-pages/dist/style.css";
+import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 
 const BannerContainer = styled.div`
   background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)),
@@ -87,6 +88,28 @@ const FlippingPageImage = styled.img`
   border-radius: 12px;
 `;
 
+const FlippingButtonPrev = styled(GrLinkPrevious)`
+  font-size: 1.5rem;
+  font-weight: 600;
+`;
+
+const FlippingButtonNext = styled(GrLinkNext)`
+  font-size: 1.5rem;
+  font-weight: 600;
+`;
+
+const FlippingButtonWrap = styled.span`
+  display: flex;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 400;
+  align-items: center;
+  gap: 0.5rem;
+  &:hover {
+    color: #fea112;
+  }
+`;
+
 const BannerCmpt = ({ navbarOpened }) => {
   const navigate = useNavigate();
   const handleEnquiry = () => {
@@ -130,12 +153,21 @@ const BannerCmpt = ({ navbarOpened }) => {
               }}
             />
           </div>
+          <div className="w-100 mb-3 d-flex justify-content-around">
+            <FlippingButtonWrap onClick={back}>
+              <FlippingButtonPrev /> Prev
+            </FlippingButtonWrap>
+            <FlippingButtonWrap onClick={next}>
+              Next <FlippingButtonNext />
+            </FlippingButtonWrap>
+          </div>
           <FlippingWrapper>
             <FlippingPages
               direction="right-to-left"
               onSwipeEnd={setSelected}
               selected={selected}
               disableSwipe={true}
+              swipeSpeed={2000}
             >
               <FlippingPage>
                 <FlippingPageImage
