@@ -193,6 +193,18 @@ const BannerCmpt = ({ navbarOpened }) => {
                   alt="home-menu-page04"
                 />
               </FlippingPage>
+              <FlippingPage>
+                <FlippingPageImage
+                  src={require("../../assets/images/home-menu-page05.png")}
+                  alt="home-menu-page05"
+                />
+              </FlippingPage>
+              <FlippingPage>
+                <FlippingPageImage
+                  src={require("../../assets/images/home-menu-page06.png")}
+                  alt="home-menu-page06"
+                />
+              </FlippingPage>
             </FlippingPages>
           </FlippingWrapper>
 
