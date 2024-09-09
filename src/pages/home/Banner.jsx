@@ -75,6 +75,7 @@ const FlippingPage = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 12px;
+  background-color: #fea112;
 `;
 
 const FlippingPageImage = styled(LazyLoadImage)`
