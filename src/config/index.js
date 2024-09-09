@@ -569,4 +569,6 @@ export const bookletImages = [
   "home-menu-page04",
   "home-menu-page05",
   "home-menu-page06",
+  "home-menu-page07",
+  "home-menu-page08",
 ];
