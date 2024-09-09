@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import background from "../../assets/images/bg-hero.jpg";
-import { homePageConstants } from "../../config";
+import { homePageConstants, bookletImages } from "../../config";
 import { useNavigate } from "react-router-dom";
 import { FlippingPages } from "flipping-pages";
-import "flipping-pages/dist/style.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
+import "flipping-pages/dist/style.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const BannerContainer = styled.div`
   background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)),
@@ -57,12 +59,6 @@ const EnquiryLink = styled.span`
   }
 `;
 
-const ImageStyled = styled.img`
-  && {
-    border-radius: 0.5rem;
-  }
-`;
-
 const FlippingWrapper = styled.div`
   && {
     height: 600px;
@@ -81,7 +77,7 @@ const FlippingPage = styled.div`
   border-radius: 12px;
 `;
 
-const FlippingPageImage = styled.img`
+const FlippingPageImage = styled(LazyLoadImage)`
   object-fit: fill;
   width: 100%;
   height: 100%;
@@ -169,58 +165,22 @@ const BannerCmpt = ({ navbarOpened }) => {
               disableSwipe={true}
               swipeSpeed={2000}
             >
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page01.png")}
-                  alt="home-menu-page01"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page02.png")}
-                  alt="home-menu-page02"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page03.png")}
-                  alt="home-menu-page03"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page04.png")}
-                  alt="home-menu-page04"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page05.png")}
-                  alt="home-menu-page05"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page06.png")}
-                  alt="home-menu-page06"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page07.png")}
-                  alt="home-menu-page07"
-                />
-              </FlippingPage>
-              <FlippingPage>
-                <FlippingPageImage
-                  src={require("../../assets/images/home-menu-page08.png")}
-                  alt="home-menu-page08"
-                />
-              </FlippingPage>
+              {bookletImages.map((image) => (
+                <FlippingPage key={image}>
+                  <FlippingPageImage
+                    src={require(`../../assets/images/${image}.png`)}
+                    alt={image}
+                    effect="blur"
+                    wrapperProps={{
+                      style: { transitionDelay: "0.5s" },
+                    }}
+                  />
+                </FlippingPage>
+              ))}
             </FlippingPages>
           </FlippingWrapper>
-
-          <div className="col-lg-6 text-center text-lg-start">
+          <div className="col-lg-2"></div>
+          <div className="col-lg-8 text-center text-lg-start">
             <BannerTitle className="animated slideInLeft ">
               {homePageConstants.header}
             </BannerTitle>
@@ -237,13 +197,7 @@ const BannerCmpt = ({ navbarOpened }) => {
               {homePageConstants.link}
             </EnquiryLink>
           </div>
-          <div className="col-lg-6 text-center text-lg-end overflow-hidden">
-            <ImageStyled
-              src={require("../../assets/images/gallery-food-02.png")}
-              alt="food"
-              className="pt-4 pb-3 img-fluid"
-            />
-          </div>
+          <div className="col-lg-2"></div>
         </div>
       </BannerWrapper>
     </BannerContainer>

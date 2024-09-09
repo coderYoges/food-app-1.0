@@ -561,3 +561,12 @@ export const galleryPageConstants = {
     ["gallery-wholesale-01.jpg", "gallery-wholesale-02.jpg"],
   ],
 };
+
+export const bookletImages = [
+  "home-menu-page01",
+  "home-menu-page02",
+  "home-menu-page03",
+  "home-menu-page04",
+  "home-menu-page05",
+  "home-menu-page06",
+];
