@@ -112,7 +112,7 @@ const BannerCmpt = ({ navbarOpened }) => {
     navigate("/about", { replace: true });
   };
   const [selected, setSelected] = useState(0);
-
+  const PlaceholderImage = require('../../assets/images/home-menu-placeholder.png');
   const back = () => {
     setSelected((selected) => Math.max(selected - 1, 0));
   };
@@ -171,8 +171,9 @@ const BannerCmpt = ({ navbarOpened }) => {
                     src={require(`../../assets/images/${image}.png`)}
                     alt={image}
                     effect="blur"
+                    PlaceholderSrc={PlaceholderImage}
                     wrapperProps={{
-                      style: { transitionDelay: "0.5s" },
+                      style: { transitionDelay: "0.2s" },
                     }}
                   />
                 </FlippingPage>
