@@ -171,7 +171,7 @@ const BannerCmpt = ({ navbarOpened }) => {
                     src={require(`../../assets/images/${image}.png`)}
                     alt={image}
                     effect="blur"
-                    PlaceholderSrc={PlaceholderImage}
+                    placeholderSrc={PlaceholderImage}
                     wrapperProps={{
                       style: { transitionDelay: "0.2s" },
                     }}
