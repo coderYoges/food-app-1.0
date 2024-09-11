@@ -119,7 +119,7 @@ const BannerCmpt = ({ navbarOpened }) => {
   };
 
   const next = () => {
-    setSelected((selected) => Math.min(selected + 1, 6));
+    setSelected((selected) => Math.min(selected + 1, 10));
   };
   return (
     <BannerContainer
