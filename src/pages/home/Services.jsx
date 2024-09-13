@@ -2,6 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { homePageConstants } from "../../config";
 import { useNavigate } from "react-router-dom";
+import serviceImg01 from "../../assets/images/wedding-events.jpeg";
+import serviceImg02 from "../../assets/images/pre-wedding-events.jpeg";
+import serviceImg03 from "../../assets/images/corporate-events.jpeg";
+import serviceImg04 from "../../assets/images/birthday-events.jpeg";
+
+const serviceImageList = [
+  serviceImg01,
+  serviceImg02,
+  serviceImg03,
+  serviceImg04,
+];
 
 const ServiceItem = styled.div`
   cursor: pointer;
@@ -9,13 +20,6 @@ const ServiceItem = styled.div`
   background-color: #fff;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
   transition: 0.5s;
-  &:hover {
-    background-color: #90ee90;
-  }
-`;
-
-const ServiceIcon = styled.i`
-  color: #fea116;
 `;
 
 const ServicesCmpt = () => {
@@ -28,24 +32,49 @@ const ServicesCmpt = () => {
             className="col-lg-3 col-sm-6 animated fadeInUp"
             key={"service-id-" + index}
             onClick={() =>
-              navigate("/gallery", { replace: true, state : {selectedServiceId : index } })
+              navigate("/gallery", {
+                replace: true,
+                state: { selectedServiceId: index },
+              })
             }
           >
-            <ServiceItem className="rounded pt-3">
-              <div className="p-4">
-                <ServiceIcon
-                  className={`fa fa-3x ${service.icon} mb-4`}
-                ></ServiceIcon>
+            <ServiceItem className="rounded">
+              <h2
+                style={{
+                  minHeight: "50px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#000",
+                  color: "#fff",
+                  margin: "0",
+                }}
+              >
+                {service.title}
+              </h2>
+              <div
+                style={{
+                  backgroundImage: `url(${serviceImageList[index]})`,
+                  backgroundPosition: "top",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  width: "100%",
+                  height: "200px",
+                  opacity: "0.8",
+                }}
+              >
                 <h5
                   style={{
-                    minHeight: "48px",
                     display: "flex",
                     alignItems: "center",
+                    justifyContent: "center",
+                    paddingTop: "100px",
+                    opacity: "1",
+                    color: "#000",
                   }}
                 >
-                  {service.title}
+                  Learn More...
                 </h5>
-                {/* <p className="text-secondary">{service.content}</p> */}
               </div>
             </ServiceItem>
           </div>

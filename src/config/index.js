@@ -74,28 +74,16 @@ export const homePageConstants = {
   link: "Read more about us",
   services: [
     {
-      title: "Function Catering Service",
-      icon: "fa-user-tie",
-      content:
-        "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+      title: "Wedding Events",
     },
     {
-      title: "Quality Food",
-      icon: "fa-utensils",
-      content:
-        "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+      title: "Pre Wedding Events",
     },
     {
-      title: "Own Commercial Spaces",
-      icon: "fa-warehouse",
-      content:
-        "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+      title: "Corporate Events",
     },
     {
-      title: "Wholesale Raw Materials",
-      icon: "fa-cart-plus",
-      content:
-        "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+      title: "Other Family Events",
     },
   ],
 };

@@ -72,17 +72,32 @@ const FlippingWrapper = styled.div`
 `;
 
 const FlippingPage = styled.div`
-  height: 100%;
-  width: 100%;
-  border-radius: 12px;
-  background-color: #fea112;
+  &&& {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #fea112;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
 `;
 
 const FlippingPageImage = styled(LazyLoadImage)`
-  object-fit: fill;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
+  &&& {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: #fea112;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
 `;
 
 const FlippingButtonPrev = styled(GrLinkPrevious)`
@@ -113,7 +128,6 @@ const BannerCmpt = ({ navbarOpened }) => {
     navigate("/about", { replace: true });
   };
   const [selected, setSelected] = useState(0);
-  const PlaceholderImage = require('../../assets/images/home-menu-placeholder.png');
   const back = () => {
     setSelected((selected) => Math.max(selected - 1, 0));
   };
@@ -172,7 +186,6 @@ const BannerCmpt = ({ navbarOpened }) => {
                     src={require(`../../assets/images/${image}.png`)}
                     alt={image}
                     effect="blur"
-                    placeholderSrc={PlaceholderImage}
                     wrapperProps={{
                       style: { transitionDelay: "0.2s" },
                     }}
