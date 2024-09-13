@@ -32,7 +32,7 @@ const ServicesCmpt = () => {
             className="col-lg-3 col-sm-6 animated fadeInUp"
             key={"service-id-" + index}
             onClick={() =>
-              navigate("/gallery", {
+              navigate("/service", {
                 replace: true,
                 state: { selectedServiceId: index },
               })

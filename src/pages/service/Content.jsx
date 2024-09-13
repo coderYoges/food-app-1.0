@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { aboutPageConstants } from "../../config";
+import { homePageConstants } from "../../config";
+import { useLocation } from "react-router-dom";
+import { get } from "lodash";
 
 const BannerContainer = styled.div`
   background-position: top;
@@ -45,22 +47,6 @@ const BannerContent = styled.p`
   text-align: justify;
 `;
 
-const CounterWrapper = styled.div`
-  padding: 0;
-  align-items: center;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-`;
-
-const CounterBox = styled.div`
-  color: #fea116;
-  flex-shrink: 0;
-  font-size: calc(1.425rem + 2.1vw);
-  font-weight: 800;
-  line-height: 1.2;
-`;
-
 const StyledImage = styled.img`
   width: 100%;
   max-width: 100%;
@@ -83,7 +69,9 @@ const StyledImgShortTop = styled.img`
   border-radius: 0.2rem;
 `;
 
-const BannerCmpt = ({ navbarOpened }) => {
+const ContentCmpt = ({ navbarOpened }) => {
+  const location = useLocation();
+  const selectedServiceId = get(location, "state.selectedServiceId", 0);
   return (
     <BannerContainer
       navbarOpened={navbarOpened}
@@ -101,29 +89,16 @@ const BannerCmpt = ({ navbarOpened }) => {
             }}
           >
             <BannerTitle className="mt-4 mt-lg-0 text-center">
-              {aboutPageConstants.title}
+              {homePageConstants.services[selectedServiceId].title}
             </BannerTitle>
             <div>
-              <BannerContent>{aboutPageConstants.content2}</BannerContent>
-              <BannerContent>{aboutPageConstants.content1}</BannerContent>
+              <BannerContent>
+                {homePageConstants.services[selectedServiceId].content1}
+              </BannerContent>
+              <BannerContent>
+                {homePageConstants.services[selectedServiceId].content2}
+              </BannerContent>
             </div>
-
-            <CounterWrapper>
-              <CounterBox className="years-counter"></CounterBox>
-              <div className="ps-4">
-                <h6
-                  className="text-uppercase mb-0"
-                  style={{
-                    color: "#0f172b",
-                    fontWeight: "800",
-                    fontSize: "1rem",
-                    fontFamily: "Nunito,sans-serif",
-                  }}
-                >
-                  {aboutPageConstants.yearsOfExperience}
-                </h6>
-              </div>
-            </CounterWrapper>
           </div>
           <div className="col-lg-6 mt-4 mtl-lg-0">
             <div className="row g-3">
@@ -167,4 +142,4 @@ const mapStateToProps = (state) => ({
   navbarOpened: state.auth.navbarOpened,
 });
 
-export default connect(mapStateToProps)(BannerCmpt);
+export default connect(mapStateToProps)(ContentCmpt);

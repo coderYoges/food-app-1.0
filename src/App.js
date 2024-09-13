@@ -5,6 +5,7 @@ import MenuPage from "./pages/menu/Menu";
 import ContactPage from "./pages/contact/Contact";
 import GalleryPage from "./pages/gallery/Gallery";
 import AdminPage from "./pages/admin";
+import ServicePage from "./pages/service/Service";
 import { Navigate, Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -15,6 +16,7 @@ const App = ({ isAuthenticated }) => (
     <Route path="/menu" element={<MenuPage />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/gallery" element={<GalleryPage />} />
+    <Route path="/service" element={<ServicePage />} />
     <Route
       path="/admin"
       element={
@@ -23,7 +25,6 @@ const App = ({ isAuthenticated }) => (
     />
     <Route path="/" element={<Navigate replace to="/home" />} />
   </Routes>
-
 );
 
 const mapStateToProps = (state) => ({

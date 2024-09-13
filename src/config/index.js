@@ -75,15 +75,26 @@ export const homePageConstants = {
   services: [
     {
       title: "Wedding Events",
+      content1: "In Islam, marriage is a contract that is considered a foundation for family life and a way to share love and companionship.",
+      content2: "H.A. Biryani can provide Catering Services with customized menus, professional staff, and various cuisines to ensure a memorable dining experience at weddings. Their goal is to provide delicious food and impeccable service, making the wedding day special for the couple and their guests."
     },
     {
       title: "Pre Wedding Events",
+      content1: "In Islam, marriage is a contract that is considered a foundation for family life and a way to share love and companionship.",
+      content2: "H.A. Biryani can provide Catering Services with customized menus, professional staff, and various cuisines to ensure a memorable dining experience at weddings. Their goal is to provide delicious food and impeccable service, making the wedding day special for the couple and their guests."
+
     },
     {
       title: "Corporate Events",
+      content1: "In Islam, marriage is a contract that is considered a foundation for family life and a way to share love and companionship.",
+      content2: "H.A. Biryani can provide Catering Services with customized menus, professional staff, and various cuisines to ensure a memorable dining experience at weddings. Their goal is to provide delicious food and impeccable service, making the wedding day special for the couple and their guests."
+
     },
     {
       title: "Other Family Events",
+      content1: "In Islam, marriage is a contract that is considered a foundation for family life and a way to share love and companionship.",
+      content2: "H.A. Biryani can provide Catering Services with customized menus, professional staff, and various cuisines to ensure a memorable dining experience at weddings. Their goal is to provide delicious food and impeccable service, making the wedding day special for the couple and their guests."
+
     },
   ],
 };
