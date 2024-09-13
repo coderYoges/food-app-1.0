@@ -46,8 +46,10 @@ const ServicesCmpt = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   backgroundColor: "#000",
-                  color: "#fff",
+                  color: "#fea112",
                   margin: "0",
+                  borderTopLeftRadius: "12px",
+                  borderTopRightRadius: "12px",
                 }}
               >
                 {service.title}
@@ -61,6 +63,7 @@ const ServicesCmpt = () => {
                   width: "100%",
                   height: "200px",
                   opacity: "0.8",
+                  display: "flex",
                 }}
               >
                 <h5
@@ -68,9 +71,9 @@ const ServicesCmpt = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    paddingTop: "100px",
                     opacity: "1",
                     color: "#000",
+                    width: "100%",
                   }}
                 >
                   Learn More...
